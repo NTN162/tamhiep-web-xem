@@ -474,6 +474,18 @@ ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height
 .article-col .proc-mascot{text-align:left}
 .article-col .kiemchung{max-width:none;text-align:left;margin-left:0}
 
+/* ===== BAN 6: panel "Xem nhanh" bam theo khi cuon (nhu web goc) ===== */
+.toc-side{position:fixed;right:18px;top:110px;width:238px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(20,50,62,.16);padding:16px 18px;z-index:60;opacity:0;pointer-events:none;transform:translateX(12px);transition:opacity .25s,transform .25s}
+.toc-side.show{opacity:1;pointer-events:auto;transform:none}
+.toc-side-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.toc-side-head b{color:var(--red);font-size:16px}
+.toc-side-head button{border:0;background:#f1f6f9;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;color:#47626f;line-height:1}
+.toc-side nav{display:flex;flex-direction:column}
+.toc-side nav a{padding:8px 10px;font-size:14px;font-weight:600;color:var(--teal);border-left:3px solid #e7f0f5;border-radius:0 8px 8px 0}
+.toc-side nav a:hover{background:#f4f9fc}
+.toc-side nav a.on{background:#eef7fc;border-left-color:var(--blue);color:var(--blue-dark)}
+@media(max-width:1240px){ .toc-side{display:none} }
+
 </style>
 <style id="generateblocks-inline-css">
 .gb-container .wp-block-image img{vertical-align:middle;}.gb-grid-wrapper .wp-block-image{margin-bottom:0;}.gb-highlight{background:none;}.gb-shape{line-height:0;}:root{--gb-container-width:1200px;}
@@ -640,6 +652,20 @@ ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height
     <a class="btn btn-ghost2" href="mailto:info@insieure.net">Gửi file qua Email</a>
   </div>
 </section>
+
+
+<aside class="toc-side" id="tocSide" aria-label="Xem nhanh nội dung trang">
+  <div class="toc-side-head"><b>Xem nhanh</b><button type="button" id="tocClose" aria-label="Đóng mục xem nhanh">×</button></div>
+  <nav>
+    <a href="#cac-loai">Các loại tem nhãn</a>
+    <a href="#so-sanh">So sánh chất liệu</a>
+    <a href="#chon-tem">Chọn tem theo sản phẩm</a>
+    <a href="#thong-tin">Thông tin trên tem</a>
+    <a href="#gia">Giá tham khảo</a>
+    <a href="#quy-trinh">Quy trình</a>
+    <a href="#faq">Câu hỏi thường gặp</a>
+  </nav>
+</aside>
 
 <section class="sec" style="padding-top:40px">
   <div class="wrap article-col">
@@ -933,5 +959,26 @@ var generatepressMenu = {"toggleOpenedSubMenus":true,"openSubMenuLabel":"Open Su
 var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
 //# sourceURL=http://127.0.0.1:8087/wp-includes/js/wp-emoji-loader.min.js
 </script>
+<script>
+(function(){
+  var panel = document.getElementById('tocSide'); if(!panel) return;
+  var closed = false;
+  document.getElementById('tocClose').addEventListener('click', function(){ closed = true; panel.classList.remove('show'); });
+  addEventListener('scroll', function(){ if(!closed) panel.classList.toggle('show', window.scrollY > 520); }, { passive: true });
+  var links = panel.querySelectorAll('nav a');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){ a.classList.remove('on'); });
+        var a = map[e.target.id]; if(a) a.classList.add('on');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  Object.keys(map).forEach(function(id){ var el = document.getElementById(id); if(el) obs.observe(el); });
+})();
+</script>
+
 </body>
 </html>
