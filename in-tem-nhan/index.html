@@ -486,6 +486,23 @@ ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height
 .toc-side nav a.on{background:#eef7fc;border-left-color:var(--blue);color:var(--blue-dark)}
 @media(max-width:1240px){ .toc-side{display:none} }
 
+/* ===== BAN 7: cum dau trang gon — noi dung, don gia, social, tu van deu chieu cao ===== */
+.pd-grid{align-items:stretch}
+.pd-gallery{display:flex;flex-direction:column}
+.pd-gallery #pdMain{flex:1;height:auto;min-height:340px}
+.pd-info{display:flex;flex-direction:column}
+.pd-price{font-size:30px;font-weight:800;color:var(--red);margin:2px 0 12px}
+.pd-price span{font-size:16px;color:#7b99a8;font-weight:600}
+.pd-lines{margin-top:16px;border-top:1px solid var(--line)}
+.pd-lines p{padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:#47626f;line-height:1.6}
+.pd-social{display:flex;gap:10px;margin-top:auto;padding-top:20px}
+.pd-social a{width:40px;height:40px;border-radius:50%;border:1.5px solid #cfe0ea;color:var(--teal);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pd-social a:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.pd-social svg{width:20px;height:20px}
+.pd-aside{display:flex;flex-direction:column;height:100%}
+.pd-aside .tv-cta{margin-top:auto}
+@media(max-width:1080px){ .pd-gallery #pdMain{min-height:280px} }
+
 </style>
 <style id="generateblocks-inline-css">
 .gb-container .wp-block-image img{vertical-align:middle;}.gb-grid-wrapper .wp-block-image{margin-bottom:0;}.gb-highlight{background:none;}.gb-shape{line-height:0;}:root{--gb-container-width:1200px;}
@@ -625,16 +642,20 @@ ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height
       </div>
     </div>
     <div class="pd-info">
-      <div class="kick2">Tem nhãn &amp; bao bì</div>
       <h1>In tem nhãn theo yêu cầu tại Quận 7</h1>
-      <p class="pd-intro"><b>In tem nhãn</b> là dịch vụ in các loại tem, nhãn và decal dán lên sản phẩm để ghi thông tin, xây dựng thương hiệu và niêm phong hàng hóa. Công ty TNHH In Ấn và Quảng Cáo Tam Hiệp nhận in tem nhãn theo đúng yêu cầu của anh/chị — kích thước, chất liệu, hình dáng, số lượng ít hay nhiều — thiết kế mẫu miễn phí, duyệt mẫu trước khi in, đơn gấp lấy trong ngày tại xưởng Quận 7.</p>
-      <ul class="pd-spec">
-        <li><b>Chất liệu:</b> Giấy couche, decal nhựa PVC/PP, tem vỡ, tem chống hàng giả</li>
-        <li><b>Gia công:</b> Bế khuôn theo hình dáng, cán màng theo yêu cầu</li>
-        <li><b>Thiết kế:</b> Hỗ trợ thiết kế mẫu miễn phí, duyệt mẫu trước khi in</li>
-        <li><b>Thời gian:</b> Đơn gấp lấy trong ngày; đơn thường hẹn rõ khi báo giá</li>
-        <li><b>Giá tham khảo:</b> từ <b class="pd-price">190đ / tem</b> (theo giá niêm yết hiện tại)</li>
-      </ul>
+      <div class="pd-price">từ 190đ <span>/ tem</span></div>
+      <p class="pd-intro"><b>In tem nhãn</b> là dịch vụ in các loại tem, nhãn và decal dán lên sản phẩm để ghi thông tin, xây dựng thương hiệu và niêm phong hàng hóa. Công ty TNHH In Ấn và Quảng Cáo Tam Hiệp nhận in theo đúng yêu cầu của anh/chị — kích thước, chất liệu, hình dáng, số lượng ít hay nhiều.</p>
+      <div class="pd-lines">
+        <p><b>Chất liệu:</b> Giấy couche, decal nhựa PVC/PP, tem vỡ, tem chống hàng giả</p>
+        <p><b>Gia công:</b> Bế khuôn theo hình dáng, cán màng theo yêu cầu</p>
+        <p><b>Thiết kế:</b> Hỗ trợ thiết kế mẫu miễn phí, duyệt mẫu trước khi in</p>
+        <p><b>Thời gian:</b> Đơn gấp lấy trong ngày; đơn thường hẹn rõ khi báo giá</p>
+      </div>
+      <div class="pd-social">
+        <a href="https://www.facebook.com/profile.php?id=223488711003421" target="_blank" rel="noopener" aria-label="Fanpage In Tam Hiệp trên Facebook" title="Facebook In Tam Hiệp"><svg viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.5-4h-3.5V7.4c0-1 .3-1.6 1.7-1.6h1.8V2.2c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.9H7v4h3.3v9h3.2z" fill="currentColor"/></svg></a>
+        <a href="https://zalo.me/0909725983" target="_blank" rel="noopener" aria-label="Nhắn Zalo In Tam Hiệp" title="Zalo In Tam Hiệp"><svg viewBox="0 0 24 24"><text x="12" y="15.5" text-anchor="middle" font-size="7.5" font-weight="800" fill="currentColor" font-family="Arial, sans-serif">Zalo</text></svg></a>
+        <a href="mailto:info@insieure.net" aria-label="Gửi email cho In Tam Hiệp" title="Email In Tam Hiệp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5 12 13l9-6.5"/></svg></a>
+      </div>
     </div>
     <aside class="pd-aside">
       <h2>Tư vấn &amp; đặt hàng</h2>
@@ -643,13 +664,8 @@ ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height
       <div class="tv-row"><span class="tv-name">Email</span><a class="tv-mail" href="mailto:info@insieure.net">info@insieure.net</a></div>
       <div class="tv-row"><span class="tv-name">Địa chỉ xưởng</span><span class="tv-txt">803/23/7 Huỳnh Tấn Phát, P. Phú Thuận, Quận 7, TP.HCM</span></div>
       <div class="tv-row"><span class="tv-name">Giờ làm việc</span><span class="tv-txt">Thứ 2 – Thứ 7 · 8h – 17h30</span></div>
-      <a class="btn btn-zalo tv-cta" href="https://zalo.me/0909725983" target="_blank" rel="noopener">Nhắn Zalo tư vấn ngay</a>
+      <a class="btn btn-zalo tv-cta" href="https://zalo.me/0909725983" target="_blank" rel="noopener">Gửi file qua Zalo báo giá</a>
     </aside>
-  </div>
-  <div class="wrap pd-cta-row">
-    <a class="btn btn-zalo" href="https://zalo.me/0909725983" target="_blank" rel="noopener"><svg class="u-ic"><use href="#i-zalo"/></svg> Gửi file qua Zalo báo giá</a>
-    <a class="btn btn-teal" href="tel:0938616563">Gọi 0938 616 563</a>
-    <a class="btn btn-ghost2" href="mailto:info@insieure.net">Gửi file qua Email</a>
   </div>
 </section>
 
