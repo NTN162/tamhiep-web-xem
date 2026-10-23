@@ -463,6 +463,17 @@ ul.tick{list-style:none;display:grid;gap:13px}
 ul.tick li{position:relative;padding-left:30px;font-size:15.5px;line-height:1.7;color:#33475a}
 ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;background:#2E9BD6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4'%3E%3Cpath d='M4.5 12.5l5 5L19.5 7'/%3E%3C/svg%3E") center/11px no-repeat}
 
+/* ===== BAN 5: mot cot thang hang duy nhat cho than bai ===== */
+.article-col{max-width:880px}
+.article-col .sec-head{max-width:none;margin:58px 0 24px;text-align:left}
+.article-col .sec-head:first-of-type{margin-top:40px}
+.article-col .sec-head h2::after{margin-left:0}
+.article-col .art,.article-col .ds-loai,.article-col .faq-list,.article-col .bang-wrap,
+.article-col .fig,.article-col .steps,.article-col .cta-giua,.article-col .rel-grid,
+.article-col .tomtat,.article-col .toc,.article-col .proc-mascot{max-width:none;width:100%;margin-left:0;margin-right:0}
+.article-col .proc-mascot{text-align:left}
+.article-col .kiemchung{max-width:none;text-align:left;margin-left:0}
+
 </style>
 <style id="generateblocks-inline-css">
 .gb-container .wp-block-image img{vertical-align:middle;}.gb-grid-wrapper .wp-block-image{margin-bottom:0;}.gb-highlight{background:none;}.gb-shape{line-height:0;}:root{--gb-container-width:1200px;}
@@ -544,6 +555,50 @@ ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height
 </header>
 
 <!-- ===== TRANG SAN PHAM: IN TEM NHAN (ban 2 — cau truc trang chi tiet san pham) ===== -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Product",
+   "@id": "http://127.0.0.1:8087/in-tem-nhan/#product",
+   "name": "In tem nhãn theo yêu cầu tại Quận 7",
+   "description": "In tem nhãn decal theo yêu cầu tại Quận 7: tem giấy, decal nhựa, tem chống hàng giả, tem vỡ niêm phong. Thiết kế mẫu miễn phí, nhận số lượng ít, đơn gấp lấy trong ngày.",
+   "brand": { "@type": "Brand", "name": "In Tam Hiệp" },
+   "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "VND",
+    "lowPrice": "190",
+    "highPrice": "250",
+    "offerCount": "3",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "LocalBusiness", "name": "CÔNG TY TNHH IN ẤN VÀ QUẢNG CÁO TAM HIỆP", "telephone": "0938616563" }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "http://127.0.0.1:8087/" },
+    { "@type": "ListItem", "position": 2, "name": "Dịch vụ in ấn", "item": "http://127.0.0.1:8087/dich-vu/" },
+    { "@type": "ListItem", "position": 3, "name": "In tem nhãn", "item": "http://127.0.0.1:8087/in-tem-nhan/" }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    { "@type": "Question", "name": "In tem nhãn số lượng ít được không?", "acceptedAnswer": { "@type": "Answer", "text": "Được. Xưởng In Tam Hiệp nhận in số lượng ít cho shop nhỏ và khách mới kinh doanh; số lượng càng nhiều, giá mỗi tem càng tốt." } },
+    { "@type": "Question", "name": "Chưa có thiết kế tem nhãn thì sao?", "acceptedAnswer": { "@type": "Answer", "text": "Anh/chị chỉ cần gửi logo và thông tin sản phẩm — xưởng thiết kế mẫu miễn phí và gửi duyệt trước khi in." } },
+    { "@type": "Question", "name": "In tem nhãn mất bao lâu?", "acceptedAnswer": { "@type": "Answer", "text": "Tùy số lượng và chất liệu; đơn gấp có thể lấy trong ngày tại xưởng Quận 7. Thời gian cụ thể xưởng báo rõ ngay khi tư vấn." } },
+    { "@type": "Question", "name": "Tem dán lên chai nhựa, thủy tinh có bền không?", "acceptedAnswer": { "@type": "Answer", "text": "Nên dùng decal nhựa hoặc PP — chống nước, bám chắc. Xưởng tư vấn theo đúng bề mặt dán của sản phẩm." } },
+    { "@type": "Question", "name": "In tem nhãn có giao hàng ngoài Quận 7 không?", "acceptedAnswer": { "@type": "Answer", "text": "Có — xưởng giao tận nơi trong TP.HCM và gửi hàng đi tỉnh." } },
+    { "@type": "Question", "name": "Muốn in lại mẫu tem cũ y hệt được không?", "acceptedAnswer": { "@type": "Answer", "text": "Được, anh/chị gửi mẫu hoặc file cũ, xưởng in lại đúng mẫu đã duyệt." } }
+   ]
+  }
+ ]
+}
+</script>
+
 <nav class="crumb"><div class="wrap"><a href="https://insieure.net/">Trang chủ</a> <span>›</span> <a href="https://insieure.net/dich-vu/">Dịch vụ in ấn</a> <span>›</span> <b>In tem nhãn</b></div></nav>
 
 <section class="pdetail">
