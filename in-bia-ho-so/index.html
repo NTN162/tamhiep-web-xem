@@ -1077,8 +1077,9 @@ ul.tick li b{margin-right:8px}
   .tabbar-bubble{position:relative;z-index:1;flex:0 0 auto;width:58px;height:58px;margin:-30px 5px 0;border-radius:50%;background:linear-gradient(135deg,#2E9BD6,#1B87C9);border:4px solid #fff;box-shadow:0 10px 22px rgba(27,135,201,.45);display:flex;align-items:center;justify-content:center;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:transform .15s}
   .tabbar-bubble svg{width:30px;height:30px;display:block}
   .tabbar-bubble:active{transform:scale(.93)}
-  .tsheet-bg{display:block;position:fixed;inset:0;z-index:90;background:rgba(15,40,52,.48);opacity:0;transition:opacity .3s}
-  .tsheet-bg.open{opacity:1}
+  .tsheet-bg{display:block;position:fixed;inset:0;z-index:90;background:rgba(15,40,52,.48);opacity:0;transition:opacity .3s;pointer-events:none}
+  .tsheet-bg[hidden]{display:none!important}
+  .tsheet-bg.open{opacity:1;pointer-events:auto}
   .tsheet{display:flex;flex-direction:column;position:fixed;left:0;right:0;bottom:0;z-index:95;background:#fff;border-radius:22px 22px 0 0;box-shadow:0 -12px 34px rgba(20,50,62,.25);max-height:78vh;padding-bottom:env(safe-area-inset-bottom,0px);transform:translateY(106%);transition:transform .34s cubic-bezier(.45,0,.25,1)}
   .tsheet.open{transform:none}
   .tsheet[hidden]{display:none!important}
