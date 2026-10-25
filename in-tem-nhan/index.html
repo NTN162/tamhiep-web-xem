@@ -978,25 +978,193 @@ ul.tick li b{margin-right:8px}
 <nav class="tabbar" id="tabbar" aria-label="Điều hướng nhanh">
   <span class="tabbar-pill" aria-hidden="true"></span>
   <a class="tabbar-item" href="https://ntn162.github.io/tamhiep-web-xem/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.2 12 3l9 7.2"/><path d="M5.5 8.8V20a1.5 1.5 0 0 0 1.5 1.5h10A1.5 1.5 0 0 0 18.5 20V8.8"/><path d="M9.5 21.5v-6h5v6"/></svg><span>Trang chủ</span></a>
-  <a class="tabbar-item" href="https://ntn162.github.io/tamhiep-web-xem/dich-vu/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Dịch vụ</span></a>
+  <button type="button" class="tabbar-item ctx" data-sheet="related" data-active="1" aria-haspopup="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Tem &amp; Bao bì</span></button>
   <a class="tabbar-bubble" href="https://zalo.me/0909725983" target="_blank" rel="noopener" aria-label="Chat Zalo với In Tam Hiệp" title="Chat Zalo"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2.8C6.4 2.8 2 6.8 2 11.7c0 2.8 1.4 5.3 3.7 6.9L5 22l3.7-2c1 .3 2.1.5 3.3.5 5.6 0 10-4 10-8.8S17.6 2.8 12 2.8z"/><circle cx="8" cy="11.7" r="1.2" fill="#1B87C9"/><circle cx="12" cy="11.7" r="1.2" fill="#1B87C9"/><circle cx="16" cy="11.7" r="1.2" fill="#1B87C9"/></svg></a>
   <a class="tabbar-item" href="tel:0938616563"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg><span>Gọi ngay</span></a>
-  <a class="tabbar-item" href="https://ntn162.github.io/tamhiep-web-xem/lien-he/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Liên hệ</span></a>
+  <button type="button" class="tabbar-item" data-sheet="search" aria-haspopup="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.6-4.6"/></svg><span>Tìm kiếm</span></button>
 </nav>
+<div class="tsheet-bg" id="tsheetBg" hidden></div>
+<section class="tsheet" id="sheetCatalog" hidden aria-label="Danh mục sản phẩm">
+  <div class="tsheet-head"><b>Danh mục sản phẩm</b><button type="button" class="tsheet-x" data-close aria-label="Đóng danh mục">×</button></div>
+  <div class="tsheet-body">
+    <div class="tcat-grp">Ấn phẩm văn phòng</div>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-danh-thiep/">In danh thiếp<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-card-visit-2-mat/">In card visit 2 mặt<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-card-visit-dap-noi/">In card visit dập nổi<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay/">In sổ tay<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay-bia-cung/">In sổ tay bìa cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay-bia-da/">In sổ tay bìa da<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay-lo-xo/">In sổ tay lò xo<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay-mini/">In sổ tay mini<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bao-thu/">In bao thư<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-letterhead/">In letterhead<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-giay-tieu-de/">In giấy tiêu đề<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-giay-ghi-chu/">In giấy ghi chú<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-bia-ho-so/">In bìa hồ sơ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bia-ho-so-cong/">In bìa hồ sơ còng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bia-ho-so-gap-doi/">In bìa hồ sơ gấp đôi<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bia-ho-so-kep-giay/">In bìa hồ sơ kẹp giấy<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bieu-mau-1-lien/">In biểu mẫu 1 liên<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bieu-mau-3-lien/">In biểu mẫu 3 liên<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-the-nhan-vien/">In thẻ nhân viên<span class="arr">›</span></a>
+    <div class="tcat-grp">Tem nhãn &amp; Bao bì</div>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-tem-nhan/">In tem nhãn<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tem-nhan-giay/">In tem nhãn giấy<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-decal/">In decal<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-cuon/">In decal cuộn<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-nhan-phu/">In decal nhãn phụ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-vo/">In decal vỡ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tem-chong-hang-gia/">In tem chống hàng giả<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay/">In hộp giấy<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay-dung-ly/">In hộp giấy đựng ly<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay-kraft/">In hộp giấy kraft<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton/">In hộp carton<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-nap-gai/">In hộp carton nắp gài<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-quai-xach/">In hộp carton quai xách<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-song/">In hộp carton sóng<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung/">In hộp cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-am-duong/">In hộp cứng âm dương<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-cao-cap/">In hộp cứng cao cấp<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-nam-cham/">In hộp cứng nam châm<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-dung-board-game/">In hộp đựng board game<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay/">In túi giấy<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-dung-qua/">In túi giấy đựng quà<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-dung-thuc-pham/">In túi giấy đựng thực phẩm<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-kraft/">In túi giấy kraft<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-thoi-trang/">In túi giấy thời trang<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tag-treo/">In tag treo<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-nilon/">In túi nilon<span class="arr">›</span></a>
+    <div class="tcat-grp">Ấn phẩm quảng cáo</div>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-catalogue/">In catalogue<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-catalog-bia-cung/">In catalog bìa cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-catalog-gap-2/">In catalog gập 2<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-catalog-san-pham/">In catalog sản phẩm<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-menu/">In menu<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-menu-bia-cung/">In menu bìa cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-menu-giay-kraft/">In menu giấy kraft<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-menu-nha-hang/">In menu nhà hàng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-menu-quan-ca-phe/">In menu quán cà phê<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-to-roi/">In tờ rơi<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-to-roi-khai-truong/">In tờ rơi khai trương<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-to-roi-quang-cao/">In tờ rơi quảng cáo<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-to-roi-sieu-thi/">In tờ rơi siêu thị<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-poster/">In poster<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-standee/">In standee<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-banner-backdrop/">In banner backdrop<span class="arr">›</span></a>
+    <div class="tcat-grp">Lịch &amp; Quà Tết</div>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-tet/">In lịch Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/dich-vu-in-lich-tet-gia-re/">Dịch vụ in lịch Tết giá rẻ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-de-ban/">In lịch để bàn<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-treo-tuong/">In lịch treo tường<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-5-to/">In lịch 5 tờ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-7-to/">In lịch 7 tờ<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-bloc/">In lịch bloc<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-bloc-2027-gia-re-bao-gia-mau-moi-nhat/">In lịch bloc 2027 giá rẻ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-bloc-sieu-cuc-dai-2027/">In lịch bloc siêu cực đại 2027<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-go-3d/">In lịch gỗ 3D<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-laminate/">In lịch laminate<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tranh-lich-tet/">In tranh lịch Tết<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-bao-li-xi/">In bao lì xì<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bao-li-xi-tet-gia-re-tai-tp-hcm-mau-dep-in-theo-yeu-cau/">In bao lì xì Tết giá rẻ TP.HCM<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-qua-tet/">In hộp quà Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-tet-gia-bao-nhieu-bang-gia-in-lich-tet-2026-moi-nhat/">Bảng giá in lịch Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/99-mau-lich-tet-dep-2027-bloc-7-to-de-ban-go-3d/">99 mẫu lịch Tết đẹp 2027<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/khi-nao-nen-dat-in-lich-tet-de-duoc-gia-tot-nhat/">Khi nào nên đặt in lịch Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/so-sanh-cac-loai-lich-tet-bloc-7-to-5-to-de-ban-go-3d-nen-chon-loai-nao/">So sánh các loại lịch Tết<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-thiep-va-giay-khen/">In thiệp và giấy khen<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-thiep-tet/">In thiệp Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-giay-khen/">In giấy khen<span class="arr">›</span></a>
+  </div>
+</section>
+<section class="tsheet" id="sheetRelated" hidden aria-label="Sản phẩm liên quan">
+  <div class="tsheet-head"><b>Tem nhãn &amp; Bao bì</b><button type="button" class="tsheet-x" data-close aria-label="Đóng">×</button></div>
+  <div class="tsheet-body">
+    <a class="trow hubrow" href="https://ntn162.github.io/tamhiep-web-xem/dich-vu/"><span class="hp">Danh mục</span>Tất cả dịch vụ in ấn<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tem-nhan-giay/">In tem nhãn giấy<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-decal/">In decal<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-cuon/">In decal cuộn<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-nhan-phu/">In decal nhãn phụ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-vo/">In decal vỡ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tem-chong-hang-gia/">In tem chống hàng giả<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay/">In hộp giấy<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay-dung-ly/">In hộp giấy đựng ly<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay-kraft/">In hộp giấy kraft<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton/">In hộp carton<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-nap-gai/">In hộp carton nắp gài<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-quai-xach/">In hộp carton quai xách<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-song/">In hộp carton sóng<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung/">In hộp cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-am-duong/">In hộp cứng âm dương<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-cao-cap/">In hộp cứng cao cấp<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-nam-cham/">In hộp cứng nam châm<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-dung-board-game/">In hộp đựng board game<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay/">In túi giấy<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-dung-qua/">In túi giấy đựng quà<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-dung-thuc-pham/">In túi giấy đựng thực phẩm<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-kraft/">In túi giấy kraft<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-thoi-trang/">In túi giấy thời trang<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tag-treo/">In tag treo<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-nilon/">In túi nilon<span class="arr">›</span></a>
+    <button type="button" class="trow allrow" data-open-sheet="catalog">Tất cả sản phẩm <span class="arr">›</span></button>
+  </div>
+</section>
+<section class="tsheet" id="sheetSearch" hidden aria-label="Tìm kiếm sản phẩm">
+  <div class="tsheet-head"><b>Tìm kiếm sản phẩm</b><button type="button" class="tsheet-x" data-close aria-label="Đóng tìm kiếm">×</button></div>
+  <div class="tsheet-body">
+    <form class="tsearch" action="https://ntn162.github.io/tamhiep-web-xem/" method="get" role="search">
+      <input type="search" name="s" placeholder="Nhập tên sản phẩm in…" aria-label="Từ khóa tìm kiếm" autocomplete="off">
+      <button type="submit">Tìm</button>
+    </form>
+    <div class="tcat-grp">Tìm nhanh</div>
+    <div class="tchips">
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-tem-nhan/">Tem nhãn</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay/">Hộp giấy</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-lich-tet/">Lịch Tết</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-danh-thiep/">Danh thiếp</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay/">Túi giấy</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-menu/">Menu</a>
+    </div>
+  </div>
+</section>
 <style>
-.tabbar{display:none}
+.tabbar,.tsheet,.tsheet-bg{display:none}
 @media(max-width:860px){
   body{padding-bottom:94px}
+  body.tsheet-open{overflow:hidden}
   .float-contact{display:none!important}
   .tabbar{display:flex;align-items:flex-end;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:80;background:#fff;border-radius:24px;box-shadow:0 14px 34px rgba(20,50,62,.28);padding:7px 8px}
   .tabbar-pill{position:absolute;top:7px;bottom:7px;left:0;width:0;border-radius:17px;background:#E8F3F9;opacity:0;z-index:0}
   .tabbar.ready .tabbar-pill{opacity:1;transition:transform .38s cubic-bezier(.45,0,.25,1),width .38s cubic-bezier(.45,0,.25,1)}
-  .tabbar-item{position:relative;z-index:1;flex:1 1 0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0 4px;color:#5B7A88;font-size:11px;font-weight:600;line-height:1.15;text-decoration:none;-webkit-tap-highlight-color:transparent}
+  .tabbar-item{position:relative;z-index:1;flex:1 1 0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0 4px;color:#5B7A88;font-size:11px;font-weight:600;line-height:1.15;text-decoration:none;-webkit-tap-highlight-color:transparent;background:none;border:0;font-family:inherit;cursor:pointer}
   .tabbar-item svg{width:23px;height:23px;display:block}
   .tabbar-item.on{color:#23586A}
+  .tabbar-item.ctx span{font-size:10px;line-height:1.2;text-align:center}
   .tabbar-bubble{position:relative;z-index:1;flex:0 0 auto;width:58px;height:58px;margin:-30px 5px 0;border-radius:50%;background:linear-gradient(135deg,#2E9BD6,#1B87C9);border:4px solid #fff;box-shadow:0 10px 22px rgba(27,135,201,.45);display:flex;align-items:center;justify-content:center;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:transform .15s}
   .tabbar-bubble svg{width:30px;height:30px;display:block}
   .tabbar-bubble:active{transform:scale(.93)}
+  .tsheet-bg{display:block;position:fixed;inset:0;z-index:90;background:rgba(15,40,52,.48);opacity:0;transition:opacity .3s}
+  .tsheet-bg.open{opacity:1}
+  .tsheet{display:flex;flex-direction:column;position:fixed;left:0;right:0;bottom:0;z-index:95;background:#fff;border-radius:22px 22px 0 0;box-shadow:0 -12px 34px rgba(20,50,62,.25);max-height:78vh;padding-bottom:env(safe-area-inset-bottom,0px);transform:translateY(106%);transition:transform .34s cubic-bezier(.45,0,.25,1)}
+  .tsheet.open{transform:none}
+  .tsheet[hidden]{display:none!important}
+  .tsheet::before{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:44px;height:4px;border-radius:2px;background:#D7E5EC}
+  .tsheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 18px 10px;border-bottom:1px solid #E7F0F5}
+  .tsheet-head b{font-size:16.5px;color:#23586A}
+  .tsheet-x{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:0;background:#E8F3F9;color:#23586A;font-size:20px;line-height:1;cursor:pointer;font-family:inherit}
+  .tsheet-body{overflow-y:auto;padding:4px 10px 16px;-webkit-overflow-scrolling:touch}
+  .tcat-grp{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#1B87C9;margin:15px 8px 3px}
+  .trow{display:flex;align-items:center;gap:8px;width:100%;padding:11px 10px;font-size:15px;color:#2A4A57;text-decoration:none;border:0;border-bottom:1px solid #F0F5F8;background:none;text-align:left;font-family:inherit;cursor:pointer;box-sizing:border-box}
+  .trow .arr{margin-left:auto;color:#9DB8C4;font-weight:700}
+  .trow.hub{font-weight:700;color:#23586A}
+  .trow.hubrow{font-weight:700;color:#23586A;background:#F4F9FC;border-radius:12px;border-bottom:0;margin-top:6px}
+  .trow.hubrow .hp{font-size:10.5px;font-weight:800;color:#1B87C9;text-transform:uppercase;letter-spacing:.05em;background:#E8F3F9;padding:3px 7px;border-radius:6px}
+  .trow.allrow{justify-content:center;font-weight:800;color:#1B87C9;border-bottom:0}
+  .trow.allrow .arr{margin-left:2px}
+  .tsearch{display:flex;gap:8px;padding:12px 8px 2px}
+  .tsearch input{flex:1;min-width:0;padding:12px 14px;border:1.5px solid #C9DDE7;border-radius:12px;font-size:15.5px;font-family:inherit;color:#2A4A57}
+  .tsearch button{flex:0 0 auto;background:linear-gradient(120deg,#2E9BD6,#1B87C9);color:#fff;border:0;border-radius:12px;padding:0 20px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer}
+  .tchips{display:flex;flex-wrap:wrap;gap:8px;padding:8px 8px 4px}
+  .tchips a{padding:8px 13px;border-radius:999px;background:#E8F3F9;color:#23586A;font-weight:600;font-size:13.5px;text-decoration:none}
 }
 </style>
 <script>
@@ -1015,15 +1183,40 @@ ul.tick li b{margin-right:8px}
     items.forEach(function(x){ x.classList.toggle('on',x===it); });
     if(instant) requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.classList.add('ready'); }); });
   }
-  var path=location.pathname, active;
-  if(path.indexOf('/dich-vu')>-1) active=items[1];
-  else if(path.indexOf('/lien-he')>-1) active=items[3];
-  else if(path==='/'||/\/tamhiep-web-xem\/?$/.test(path)) active=items[0];
-  else active=items[1];
+  var active=bar.querySelector('.tabbar-item[data-active]')||items[0];
   move(active,true);
   addEventListener('load',function(){ move(current||active,true); });
   addEventListener('resize',function(){ move(current||active,true); });
   items.forEach(function(it){ it.addEventListener('click',function(){ move(it,false); }); });
+
+  var bg=document.getElementById('tsheetBg');
+  var sheets={catalog:document.getElementById('sheetCatalog'),related:document.getElementById('sheetRelated'),search:document.getElementById('sheetSearch')};
+  var openName=null;
+  function openSheet(name){
+    var s=sheets[name]; if(!s) return;
+    closeSheets(true);
+    openName=name;
+    s.hidden=false; bg.hidden=false;
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ s.classList.add('open'); bg.classList.add('open'); }); });
+    document.body.classList.add('tsheet-open');
+  }
+  function closeSheets(instant){
+    if(!openName) return;
+    openName=null;
+    Object.keys(sheets).forEach(function(k){
+      var s=sheets[k]; if(!s) return;
+      s.classList.remove('open');
+      setTimeout(function(){ if(!s.classList.contains('open')) s.hidden=true; }, instant?0:340);
+    });
+    bg.classList.remove('open');
+    setTimeout(function(){ if(!openName) bg.hidden=true; }, instant?0:340);
+    document.body.classList.remove('tsheet-open');
+  }
+  bar.querySelectorAll('[data-sheet]').forEach(function(b){ b.addEventListener('click',function(){ openSheet(b.getAttribute('data-sheet')); }); });
+  document.querySelectorAll('[data-open-sheet]').forEach(function(b){ b.addEventListener('click',function(){ openSheet(b.getAttribute('data-open-sheet')); }); });
+  document.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click',function(){ closeSheets(false); }); });
+  if(bg) bg.addEventListener('click',function(){ closeSheets(false); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') closeSheets(false); });
 })();
 </script>
 <script id="generate-a11y">
