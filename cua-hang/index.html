@@ -406,7 +406,7 @@ table.cmp.gia td:nth-child(2){font-weight:800;color:var(--blue-dark);white-space
 .pdetail{background:linear-gradient(180deg,#f4f9fc,#fff);border-bottom:1px solid var(--line)}
 .pd-grid{display:grid;grid-template-columns:400px 1fr 300px;gap:30px;padding-top:30px;padding-bottom:36px;align-items:start}
 .pd-gallery #pdMain{width:100%;height:400px;object-fit:cover;border-radius:16px;box-shadow:0 14px 32px rgba(20,50,62,.18)}
-.pd-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:9px}
+.pd-thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:9px;margin-top:9px}
 .pd-thumbs img{width:100%;height:70px;object-fit:cover;border-radius:9px;cursor:pointer;border:2px solid transparent;opacity:.85}
 .pd-thumbs img.on{border-color:var(--blue);opacity:1}
 .kick2{display:inline-flex;background:#e3f2fa;color:var(--blue-dark);padding:6px 14px;border-radius:999px;font-weight:700;font-size:12.5px;letter-spacing:.5px;text-transform:uppercase}
@@ -426,7 +426,7 @@ table.cmp.gia td:nth-child(2){font-weight:800;color:var(--blue-dark);white-space
 .tv-txt{font-size:14.5px;color:#47626f;line-height:1.55}
 .tv-cta{width:100%;justify-content:center;margin-top:16px}
 .fig{margin:34px 0}
-.fig img{width:100%;max-height:520px;object-fit:cover;border-radius:16px}
+.fig img{width:100%;height:auto;border-radius:16px}
 .fig figcaption{text-align:center;color:#5b7a88;font-size:14px;margin-top:10px;font-style:italic}
 .art{line-height:1.78}
 .art p{margin-bottom:15px}
@@ -468,6 +468,7 @@ a.loai:hover{box-shadow:0 12px 26px rgba(20,50,62,.12);transform:translateY(-2px
 ul.tick{list-style:none;display:grid;gap:13px}
 ul.tick li{position:relative;padding-left:30px;font-size:15.5px;line-height:1.7;color:#33475a}
 ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;background:#2E9BD6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4'%3E%3Cpath d='M4.5 12.5l5 5L19.5 7'/%3E%3C/svg%3E") center/11px no-repeat}
+ul.tick li b{margin-right:8px}
 
 /* ===== BAN 5: mot cot thang hang duy nhat cho than bai ===== */
 .article-col{max-width:880px}
@@ -513,7 +514,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height
 .tv-map{margin-top:16px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
 .tv-map iframe{width:100%;height:150px;border:0;display:block}
 .pd-zoom{display:block;overflow:hidden;border-radius:16px;flex:1;min-height:340px}
-.pd-zoom img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;cursor:zoom-in}
+.pd-zoom img{width:100%;height:100%;object-fit:contain;transition:transform .35s ease;cursor:zoom-in}
 .article-col{max-width:none}
 .article-col .sec-head h2{font-size:32px}
 .article-col .art{font-size:17.5px}
@@ -795,6 +796,219 @@ ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:19px;height
   addEventListener('resize',function(){ if(innerWidth>860) close(); });
 })();
 </script>
+<nav class="tabbar" id="tabbar" aria-label="Điều hướng nhanh">
+  <span class="tabbar-pill" aria-hidden="true"></span>
+  <a class="tabbar-item" data-active="1" href="https://ntn162.github.io/tamhiep-web-xem/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.2 12 3l9 7.2"/><path d="M5.5 8.8V20a1.5 1.5 0 0 0 1.5 1.5h10A1.5 1.5 0 0 0 18.5 20V8.8"/><path d="M9.5 21.5v-6h5v6"/></svg><span>Trang chủ</span></a>
+  <button type="button" class="tabbar-item ctx" data-sheet="catalog" aria-haspopup="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Sản phẩm</span></button>
+  <a class="tabbar-bubble" href="https://zalo.me/0909725983" target="_blank" rel="noopener" aria-label="Chat Zalo với In Tam Hiệp" title="Chat Zalo"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2.8C6.4 2.8 2 6.8 2 11.7c0 2.8 1.4 5.3 3.7 6.9L5 22l3.7-2c1 .3 2.1.5 3.3.5 5.6 0 10-4 10-8.8S17.6 2.8 12 2.8z"/><circle cx="8" cy="11.7" r="1.2" fill="#1B87C9"/><circle cx="12" cy="11.7" r="1.2" fill="#1B87C9"/><circle cx="16" cy="11.7" r="1.2" fill="#1B87C9"/></svg></a>
+  <a class="tabbar-item" href="tel:0938616563"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg><span>Gọi ngay</span></a>
+  <button type="button" class="tabbar-item" data-sheet="search" aria-haspopup="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.6-4.6"/></svg><span>Tìm kiếm</span></button>
+</nav>
+<div class="tsheet-bg" id="tsheetBg" hidden></div>
+<section class="tsheet" id="sheetCatalog" hidden aria-label="Danh mục sản phẩm">
+  <div class="tsheet-head"><b>Danh mục sản phẩm</b><button type="button" class="tsheet-x" data-close aria-label="Đóng danh mục">×</button></div>
+  <div class="tsheet-body">
+    <div class="tcat-grp">Ấn phẩm văn phòng</div>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-danh-thiep/">In danh thiếp<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-card-visit-2-mat/">In card visit 2 mặt<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-card-visit-dap-noi/">In card visit dập nổi<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay/">In sổ tay<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay-bia-cung/">In sổ tay bìa cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay-bia-da/">In sổ tay bìa da<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay-lo-xo/">In sổ tay lò xo<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-so-tay-mini/">In sổ tay mini<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bao-thu/">In bao thư<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-letterhead/">In letterhead<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-giay-tieu-de/">In giấy tiêu đề<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-giay-ghi-chu/">In giấy ghi chú<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-bia-ho-so/">In bìa hồ sơ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bia-ho-so-cong/">In bìa hồ sơ còng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bia-ho-so-gap-doi/">In bìa hồ sơ gấp đôi<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bia-ho-so-kep-giay/">In bìa hồ sơ kẹp giấy<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bieu-mau-1-lien/">In biểu mẫu 1 liên<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bieu-mau-3-lien/">In biểu mẫu 3 liên<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-the-nhan-vien/">In thẻ nhân viên<span class="arr">›</span></a>
+    <div class="tcat-grp">Tem nhãn &amp; Bao bì</div>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-tem-nhan/">In tem nhãn<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tem-nhan-giay/">In tem nhãn giấy<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-decal/">In decal<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-cuon/">In decal cuộn<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-nhan-phu/">In decal nhãn phụ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-decal-vo/">In decal vỡ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tem-chong-hang-gia/">In tem chống hàng giả<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay/">In hộp giấy<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay-dung-ly/">In hộp giấy đựng ly<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay-kraft/">In hộp giấy kraft<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton/">In hộp carton<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-nap-gai/">In hộp carton nắp gài<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-quai-xach/">In hộp carton quai xách<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-carton-song/">In hộp carton sóng<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung/">In hộp cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-am-duong/">In hộp cứng âm dương<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-cao-cap/">In hộp cứng cao cấp<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-cung-nam-cham/">In hộp cứng nam châm<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-dung-board-game/">In hộp đựng board game<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay/">In túi giấy<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-dung-qua/">In túi giấy đựng quà<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-dung-thuc-pham/">In túi giấy đựng thực phẩm<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-kraft/">In túi giấy kraft<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay-thoi-trang/">In túi giấy thời trang<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tag-treo/">In tag treo<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tui-nilon/">In túi nilon<span class="arr">›</span></a>
+    <div class="tcat-grp">Ấn phẩm quảng cáo</div>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-catalogue/">In catalogue<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-catalog-bia-cung/">In catalog bìa cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-catalog-gap-2/">In catalog gập 2<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-catalog-san-pham/">In catalog sản phẩm<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-menu/">In menu<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-menu-bia-cung/">In menu bìa cứng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-menu-giay-kraft/">In menu giấy kraft<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-menu-nha-hang/">In menu nhà hàng<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-menu-quan-ca-phe/">In menu quán cà phê<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-to-roi/">In tờ rơi<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-to-roi-khai-truong/">In tờ rơi khai trương<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-to-roi-quang-cao/">In tờ rơi quảng cáo<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-to-roi-sieu-thi/">In tờ rơi siêu thị<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-poster/">In poster<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-standee/">In standee<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-banner-backdrop/">In banner backdrop<span class="arr">›</span></a>
+    <div class="tcat-grp">Lịch &amp; Quà Tết</div>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-tet/">In lịch Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/dich-vu-in-lich-tet-gia-re/">Dịch vụ in lịch Tết giá rẻ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-de-ban/">In lịch để bàn<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-treo-tuong/">In lịch treo tường<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-5-to/">In lịch 5 tờ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-7-to/">In lịch 7 tờ<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-bloc/">In lịch bloc<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-bloc-2027-gia-re-bao-gia-mau-moi-nhat/">In lịch bloc 2027 giá rẻ<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-bloc-sieu-cuc-dai-2027/">In lịch bloc siêu cực đại 2027<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-go-3d/">In lịch gỗ 3D<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-laminate/">In lịch laminate<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-tranh-lich-tet/">In tranh lịch Tết<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-bao-li-xi/">In bao lì xì<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-bao-li-xi-tet-gia-re-tai-tp-hcm-mau-dep-in-theo-yeu-cau/">In bao lì xì Tết giá rẻ TP.HCM<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-hop-qua-tet/">In hộp quà Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-lich-tet-gia-bao-nhieu-bang-gia-in-lich-tet-2026-moi-nhat/">Bảng giá in lịch Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/99-mau-lich-tet-dep-2027-bloc-7-to-de-ban-go-3d/">99 mẫu lịch Tết đẹp 2027<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/khi-nao-nen-dat-in-lich-tet-de-duoc-gia-tot-nhat/">Khi nào nên đặt in lịch Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/so-sanh-cac-loai-lich-tet-bloc-7-to-5-to-de-ban-go-3d-nen-chon-loai-nao/">So sánh các loại lịch Tết<span class="arr">›</span></a>
+    <a class="trow hub" href="https://ntn162.github.io/tamhiep-web-xem/in-thiep-va-giay-khen/">In thiệp và giấy khen<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-thiep-tet/">In thiệp Tết<span class="arr">›</span></a>
+    <a class="trow" href="https://ntn162.github.io/tamhiep-web-xem/in-giay-khen/">In giấy khen<span class="arr">›</span></a>
+  </div>
+</section>
+<section class="tsheet" id="sheetSearch" hidden aria-label="Tìm kiếm sản phẩm">
+  <div class="tsheet-head"><b>Tìm kiếm sản phẩm</b><button type="button" class="tsheet-x" data-close aria-label="Đóng tìm kiếm">×</button></div>
+  <div class="tsheet-body">
+    <form class="tsearch" action="https://ntn162.github.io/tamhiep-web-xem/" method="get" role="search">
+      <input type="search" name="s" placeholder="Nhập tên sản phẩm in…" aria-label="Từ khóa tìm kiếm" autocomplete="off">
+      <button type="submit">Tìm</button>
+    </form>
+    <div class="tcat-grp">Tìm nhanh</div>
+    <div class="tchips">
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-tem-nhan/">Tem nhãn</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-hop-giay/">Hộp giấy</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-lich-tet/">Lịch Tết</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-danh-thiep/">Danh thiếp</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-tui-giay/">Túi giấy</a>
+      <a href="https://ntn162.github.io/tamhiep-web-xem/in-menu/">Menu</a>
+    </div>
+  </div>
+</section>
+<style>
+.tabbar,.tsheet,.tsheet-bg{display:none}
+@media(max-width:860px){
+  body{padding-bottom:94px}
+  body.tsheet-open{overflow:hidden}
+  .float-contact{display:none!important}
+  .tabbar{display:flex;align-items:flex-end;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:80;background:#fff;border-radius:24px;box-shadow:0 14px 34px rgba(20,50,62,.28);padding:7px 8px}
+  .tabbar-pill{position:absolute;top:7px;bottom:7px;left:0;width:0;border-radius:17px;background:#E8F3F9;opacity:0;z-index:0}
+  .tabbar.ready .tabbar-pill{opacity:1;transition:transform .38s cubic-bezier(.45,0,.25,1),width .38s cubic-bezier(.45,0,.25,1)}
+  .tabbar-item{position:relative;z-index:1;flex:1 1 0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0 4px;color:#5B7A88;font-size:11px;font-weight:600;line-height:1.15;text-decoration:none;-webkit-tap-highlight-color:transparent;background:none;border:0;font-family:inherit;cursor:pointer}
+  .tabbar-item svg{width:23px;height:23px;display:block}
+  .tabbar-item.on{color:#23586A}
+  .tabbar-item.ctx span{font-size:10px;line-height:1.2;text-align:center}
+  .tabbar-bubble{position:relative;z-index:1;flex:0 0 auto;width:58px;height:58px;margin:-30px 5px 0;border-radius:50%;background:linear-gradient(135deg,#2E9BD6,#1B87C9);border:4px solid #fff;box-shadow:0 10px 22px rgba(27,135,201,.45);display:flex;align-items:center;justify-content:center;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:transform .15s}
+  .tabbar-bubble svg{width:30px;height:30px;display:block}
+  .tabbar-bubble:active{transform:scale(.93)}
+  .tsheet-bg{display:block;position:fixed;inset:0;z-index:90;background:rgba(15,40,52,.48);opacity:0;transition:opacity .3s;pointer-events:none}
+  .tsheet-bg[hidden]{display:none!important}
+  .tsheet-bg.open{opacity:1;pointer-events:auto}
+  .tsheet{display:flex;flex-direction:column;position:fixed;left:0;right:0;bottom:0;z-index:95;background:#fff;border-radius:22px 22px 0 0;box-shadow:0 -12px 34px rgba(20,50,62,.25);max-height:78vh;padding-bottom:env(safe-area-inset-bottom,0px);transform:translateY(106%);transition:transform .34s cubic-bezier(.45,0,.25,1)}
+  .tsheet.open{transform:none}
+  .tsheet[hidden]{display:none!important}
+  .tsheet::before{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:44px;height:4px;border-radius:2px;background:#D7E5EC}
+  .tsheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 18px 10px;border-bottom:1px solid #E7F0F5}
+  .tsheet-head b{font-size:16.5px;color:#23586A}
+  .tsheet-x{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:0;background:#E8F3F9;color:#23586A;font-size:20px;line-height:1;cursor:pointer;font-family:inherit}
+  .tsheet-body{overflow-y:auto;padding:4px 10px 16px;-webkit-overflow-scrolling:touch}
+  .tcat-grp{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#1B87C9;margin:15px 8px 3px}
+  .trow{display:flex;align-items:center;gap:8px;width:100%;padding:11px 10px;font-size:15px;color:#2A4A57;text-decoration:none;border:0;border-bottom:1px solid #F0F5F8;background:none;text-align:left;font-family:inherit;cursor:pointer;box-sizing:border-box}
+  .trow .arr{margin-left:auto;color:#9DB8C4;font-weight:700}
+  .trow.hub{font-weight:700;color:#23586A}
+  .trow.hubrow{font-weight:700;color:#23586A;background:#F4F9FC;border-radius:12px;border-bottom:0;margin-top:6px}
+  .trow.hubrow .hp{font-size:10.5px;font-weight:800;color:#1B87C9;text-transform:uppercase;letter-spacing:.05em;background:#E8F3F9;padding:3px 7px;border-radius:6px}
+  .trow.allrow{justify-content:center;font-weight:800;color:#1B87C9;border-bottom:0}
+  .trow.allrow .arr{margin-left:2px}
+  .tsearch{display:flex;gap:8px;padding:12px 8px 2px}
+  .tsearch input{flex:1;min-width:0;padding:12px 14px;border:1.5px solid #C9DDE7;border-radius:12px;font-size:15.5px;font-family:inherit;color:#2A4A57}
+  .tsearch button{flex:0 0 auto;background:linear-gradient(120deg,#2E9BD6,#1B87C9);color:#fff;border:0;border-radius:12px;padding:0 20px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer}
+  .tchips{display:flex;flex-wrap:wrap;gap:8px;padding:8px 8px 4px}
+  .tchips a{padding:8px 13px;border-radius:999px;background:#E8F3F9;color:#23586A;font-weight:600;font-size:13.5px;text-decoration:none}
+}
+</style>
+<script>
+(function(){
+  var bar=document.getElementById('tabbar'); if(!bar) return;
+  var pill=bar.querySelector('.tabbar-pill');
+  var items=[].slice.call(bar.querySelectorAll('.tabbar-item'));
+  if(!pill||!items.length) return;
+  var current=null;
+  function move(it,instant){
+    if(!it||!bar.getBoundingClientRect().height) return;
+    current=it;
+    if(instant) bar.classList.remove('ready');
+    pill.style.width=it.offsetWidth+'px';
+    pill.style.transform='translateX('+it.offsetLeft+'px)';
+    items.forEach(function(x){ x.classList.toggle('on',x===it); });
+    if(instant) requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.classList.add('ready'); }); });
+  }
+  var active=bar.querySelector('.tabbar-item[data-active]')||items[0];
+  move(active,true);
+  addEventListener('load',function(){ move(current||active,true); });
+  addEventListener('resize',function(){ move(current||active,true); });
+  items.forEach(function(it){ it.addEventListener('click',function(){ move(it,false); }); });
+
+  var bg=document.getElementById('tsheetBg');
+  var sheets={catalog:document.getElementById('sheetCatalog'),related:document.getElementById('sheetRelated'),search:document.getElementById('sheetSearch')};
+  var openName=null;
+  function openSheet(name){
+    var s=sheets[name]; if(!s) return;
+    closeSheets(true);
+    openName=name;
+    s.hidden=false; bg.hidden=false;
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ s.classList.add('open'); bg.classList.add('open'); }); });
+    document.body.classList.add('tsheet-open');
+  }
+  function closeSheets(instant){
+    if(!openName) return;
+    openName=null;
+    Object.keys(sheets).forEach(function(k){
+      var s=sheets[k]; if(!s) return;
+      s.classList.remove('open');
+      setTimeout(function(){ if(!s.classList.contains('open')) s.hidden=true; }, instant?0:340);
+    });
+    bg.classList.remove('open');
+    setTimeout(function(){ if(!openName) bg.hidden=true; }, instant?0:340);
+    document.body.classList.remove('tsheet-open');
+  }
+  bar.querySelectorAll('[data-sheet]').forEach(function(b){ b.addEventListener('click',function(){ openSheet(b.getAttribute('data-sheet')); }); });
+  document.querySelectorAll('[data-open-sheet]').forEach(function(b){ b.addEventListener('click',function(){ openSheet(b.getAttribute('data-open-sheet')); }); });
+  document.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click',function(){ closeSheets(false); }); });
+  if(bg) bg.addEventListener('click',function(){ closeSheets(false); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') closeSheets(false); });
+})();
+</script>
 <script id="generate-a11y">
 !function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("pointerdown",(function(){e.classList.add("using-mouse")}),{passive:!0}),e.addEventListener("keydown",(function(){e.classList.remove("using-mouse")}),{passive:!0})}}();
 </script>
@@ -906,5 +1120,94 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 })();
 </script>
 
+<script>window.TH_SEARCH_INDEX=[{"s": "99-mau-lich-tet-dep-2027-bloc-7-to-de-ban-go-3d", "t": "99+ mẫu lịch Tết đẹp 2027: bloc, 7 tờ, để bàn, gỗ 3D", "h": "99+ mẫu lịch Tết đẹp 2027: bloc, 7 tờ, để bàn, gỗ 3D", "k": "99+ mẫu lịch tết đẹp 2027: bloc, 7 tờ, để bàn, gỗ 3d", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "cau-hoi-thuong-gap", "t": "cau-hoi-thuong-gap", "h": "", "k": "câu hỏi thường gặp khi đặt in – quận 7", "g": "", "gs": ""}, {"s": "chinh-sach-bao-mat", "t": "chinh-sach-bao-mat", "h": "", "k": "chính sách bảo mật thông tin", "g": "", "gs": ""}, {"s": "chinh-sach-dat-hang-va-giao-nhan", "t": "chinh-sach-dat-hang-va-giao-nhan", "h": "", "k": "chính sách đặt hàng và giao nhận", "g": "", "gs": ""}, {"s": "chinh-sach-doi-tra-hoan-tien", "t": "chinh-sach-doi-tra-hoan-tien", "h": "", "k": "chính sách đổi trả, hoàn tiền hàng in", "g": "", "gs": ""}, {"s": "chinh-sach-kiem-hang", "t": "chinh-sach-kiem-hang", "h": "", "k": "chính sách kiểm hàng khi nhận hàng in", "g": "", "gs": ""}, {"s": "chinh-sach-van-chuyen", "t": "chinh-sach-van-chuyen", "h": "", "k": "chính sách vận chuyển – giao hàng in tp.hcm", "g": "", "gs": ""}, {"s": "cua-hang", "t": "cua-hang", "h": "", "k": "sản phẩm in ấn", "g": "", "gs": ""}, {"s": "dich-vu-in-lich-tet-gia-re", "t": "Dịch vụ in lịch Tết giá tốt", "h": "Dịch vụ in lịch Tết giá tốt tại Quận 7", "k": "dịch vụ in lịch tết giá rẻ", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "dieu-khoan-website", "t": "dieu-khoan-website", "h": "", "k": "điều khoản sử dụng website", "g": "", "gs": ""}, {"s": "dieu-kien-giao-dich-chung", "t": "dieu-kien-giao-dich-chung", "h": "", "k": "điều kiện giao dịch chung", "g": "", "gs": ""}, {"s": "dinh-luong-giay-la-gi", "t": "dinh-luong-giay-la-gi", "h": "", "k": "định lượng giấy là gì? cách chọn gsm cho từng ấn phẩm", "g": "", "gs": ""}, {"s": "gioi-thieu", "t": "gioi-thieu", "h": "", "k": "xưởng in quận 7 – giới thiệu in tam hiệp", "g": "", "gs": ""}, {"s": "hinh-thuc-thanh-toan", "t": "hinh-thuc-thanh-toan", "h": "", "k": "hình thức thanh toán khi đặt in", "g": "", "gs": ""}, {"s": "in-banner-backdrop", "t": "In banner, backdrop", "h": "In banner, backdrop sự kiện theo yêu cầu tại Quận 7", "k": "in banner backdrop", "g": "Dịch vụ in ấn", "gs": "dich-vu"}, {"s": "in-bao-li-xi-tet-gia-re-tai-tp-hcm-mau-dep-in-theo-yeu-cau", "t": "Bao lì xì Tết giá tốt", "h": "Bao lì xì Tết giá tốt tại TP.HCM, mẫu đẹp in theo yêu cầu", "k": "bao lì xì tết giá tốt", "g": "In bao lì xì", "gs": "in-bao-li-xi"}, {"s": "in-bao-li-xi", "t": "In bao lì xì Tết 2027", "h": "In bao lì xì Tết 2027 theo yêu cầu", "k": "in bao lì xì logo", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-bao-thu", "t": "In bao thư", "h": "In bao thư, phong bì in logo theo yêu cầu tại Quận 7", "k": "in bao thư, phong bì", "g": "", "gs": ""}, {"s": "in-bia-ho-so-cong", "t": "In bìa hồ sơ còng", "h": "In bìa hồ sơ còng in logo theo yêu cầu", "k": "in bìa hồ sơ còng", "g": "In bìa hồ sơ", "gs": "in-bia-ho-so"}, {"s": "in-bia-ho-so-gap-doi", "t": "In bìa hồ sơ gấp đôi", "h": "In bìa hồ sơ gấp đôi có túi theo yêu cầu", "k": "in bìa hồ sơ gấp đôi có túi", "g": "In bìa hồ sơ", "gs": "in-bia-ho-so"}, {"s": "in-bia-ho-so-kep-giay", "t": "In bìa hồ sơ kẹp giấy", "h": "In bìa hồ sơ kẹp giấy, bìa trình ký in logo", "k": "in bìa hồ sơ kẹp giấy, bìa trình ký", "g": "In bìa hồ sơ", "gs": "in-bia-ho-so"}, {"s": "in-bia-ho-so", "t": "In bìa hồ sơ", "h": "In bìa hồ sơ theo yêu cầu tại Quận 7", "k": "in bìa hồ sơ", "g": "In bìa hồ sơ", "gs": "in-bia-ho-so"}, {"s": "in-bieu-mau-1-lien", "t": "In biểu mẫu 1 liên", "h": "In biểu mẫu 1 liên theo yêu cầu tại Quận 7", "k": "in biểu mẫu 1 liên", "g": "", "gs": ""}, {"s": "in-bieu-mau-3-lien", "t": "In biểu mẫu 3 liên", "h": "In biểu mẫu 3 liên theo yêu cầu tại Quận 7", "k": "in biểu mẫu 3 liên", "g": "", "gs": ""}, {"s": "in-card-visit-2-mat", "t": "In card visit 2 mặt", "h": "In card visit 2 mặt theo yêu cầu tại Quận 7", "k": "in card visit 2 mặt", "g": "In danh thiếp", "gs": "in-danh-thiep"}, {"s": "in-card-visit-dap-noi", "t": "In card visit dập nổi", "h": "In card visit dập nổi, ép kim cao cấp tại Quận 7", "k": "in card visit dập nổi, ép kim cao cấp", "g": "In danh thiếp", "gs": "in-danh-thiep"}, {"s": "in-catalog-bia-cung", "t": "In catalog bìa cứng", "h": "In catalog bìa cứng cao cấp tại Quận 7", "k": "in catalogue bìa cứng", "g": "In catalogue", "gs": "in-catalogue"}, {"s": "in-catalog-gap-2", "t": "In catalog gập 2", "h": "In catalog gấp 2 theo yêu cầu tại Quận 7", "k": "in catalog gấp 2", "g": "In catalogue", "gs": "in-catalogue"}, {"s": "in-catalog-san-pham", "t": "In catalog sản phẩm", "h": "In catalog sản phẩm nhiều trang tại Quận 7", "k": "in catalog sản phẩm nhiều trang", "g": "In catalogue", "gs": "in-catalogue"}, {"s": "in-catalogue", "t": "In catalogue", "h": "In catalogue theo yêu cầu tại Quận 7", "k": "in catalogue quận 7", "g": "In catalogue", "gs": "in-catalogue"}, {"s": "in-danh-thiep", "t": "In danh thiếp", "h": "In danh thiếp theo yêu cầu tại Quận 7", "k": "in card visit quận 7", "g": "In danh thiếp", "gs": "in-danh-thiep"}, {"s": "in-decal-nhan-phu", "t": "In decal nhãn phụ", "h": "In decal nhãn phụ theo yêu cầu tại Quận 7", "k": "in decal nhãn phụ", "g": "In decal", "gs": "in-decal"}, {"s": "in-decal-vo", "t": "In decal vỡ", "h": "In decal vỡ — tem vỡ niêm phong tại Quận 7", "k": "in decal vỡ", "g": "In tem nhãn", "gs": "in-tem-nhan"}, {"s": "in-decal", "t": "In decal", "h": "In decal theo yêu cầu, giá xưởng tại Quận 7", "k": "in decal", "g": "In decal", "gs": "in-decal"}, {"s": "in-giay-ghi-chu", "t": "In giấy ghi chú", "h": "In giấy ghi chú, notepad in logo theo yêu cầu", "k": "in giấy ghi chú, notepad", "g": "", "gs": ""}, {"s": "in-giay-khen", "t": "In giấy khen", "h": "In giấy khen theo yêu cầu", "k": "in giấy khen", "g": "In thiệp Tết và giấy khen", "gs": "in-thiep-va-giay-khen"}, {"s": "in-giay-tieu-de", "t": "In giấy tiêu đề", "h": "In giấy tiêu đề công ty khổ A4 tại Quận 7", "k": "in giấy tiêu đề công ty khổ a4", "g": "", "gs": ""}, {"s": "in-hop-carton-nap-gai", "t": "In hộp carton nắp gài", "h": "In hộp carton nắp gài", "k": "in hộp carton nắp gài", "g": "In hộp carton", "gs": "in-hop-carton"}, {"s": "in-hop-carton-quai-xach", "t": "In hộp carton quai xách", "h": "In hộp carton quai xách", "k": "in hộp carton quai xách", "g": "In hộp carton", "gs": "in-hop-carton"}, {"s": "in-hop-carton-song", "t": "In hộp carton sóng", "h": "In hộp carton sóng theo yêu cầu", "k": "in hộp carton sóng", "g": "In hộp carton", "gs": "in-hop-carton"}, {"s": "in-hop-carton", "t": "In hộp carton", "h": "In hộp carton theo yêu cầu tại Quận 7", "k": "in hộp carton", "g": "In hộp carton", "gs": "in-hop-carton"}, {"s": "in-hop-cung-am-duong", "t": "In hộp cứng âm dương (nắp rời)", "h": "In hộp cứng âm dương (nắp rời)", "k": "in hộp cứng âm dương (nắp rời)", "g": "In hộp cứng", "gs": "in-hop-cung"}, {"s": "in-hop-cung-cao-cap", "t": "In hộp cứng cao cấp", "h": "In hộp cứng cao cấp theo yêu cầu", "k": "in hộp cứng cao cấp", "g": "In hộp cứng", "gs": "in-hop-cung"}, {"s": "in-hop-cung-nam-cham", "t": "In hộp cứng nam châm (nắp gập)", "h": "In hộp cứng nam châm (nắp gập)", "k": "in hộp cứng nam châm (nắp gập)", "g": "In hộp cứng", "gs": "in-hop-cung"}, {"s": "in-hop-cung", "t": "In hộp cứng cao cấp", "h": "In hộp cứng cao cấp theo yêu cầu tại Quận 7", "k": "in hộp cứng cao cấp", "g": "In hộp cứng cao cấp", "gs": "in-hop-cung"}, {"s": "in-hop-dung-board-game", "t": "In hộp đựng board game", "h": "In hộp đựng board game theo yêu cầu", "k": "in hộp boardgame", "g": "In hộp cứng", "gs": "in-hop-cung"}, {"s": "in-hop-giay-dung-ly", "t": "In hộp giấy đựng ly, khay đựng ly", "h": "In hộp giấy đựng ly, khay đựng ly", "k": "in hộp đựng ly", "g": "In hộp giấy", "gs": "in-hop-giay"}, {"s": "in-hop-giay-kraft", "t": "In hộp giấy kraft", "h": "In hộp giấy kraft theo yêu cầu", "k": "in hộp giấy kraft", "g": "In hộp giấy", "gs": "in-hop-giay"}, {"s": "in-hop-giay", "t": "In hộp giấy", "h": "In hộp giấy theo yêu cầu tại Quận 7", "k": "in hộp giấy", "g": "In hộp giấy", "gs": "in-hop-giay"}, {"s": "in-hop-qua-tet", "t": "In hộp quà Tết 2027 cho doanh nghiệp", "h": "In hộp quà Tết 2027 cho doanh nghiệp", "k": "in hộp quà tết 2027 cho doanh nghiệp", "g": "In hộp cứng", "gs": "in-hop-cung"}, {"s": "in-letterhead", "t": "In letterhead", "h": "In letterhead công ty chuẩn nhận diện thương hiệu", "k": "in letterhead công ty chuẩn nhận diện thương hiệu", "g": "", "gs": ""}, {"s": "in-lich-5-to", "t": "In lịch 5 tờ treo tường", "h": "In lịch 5 tờ treo tường", "k": "in lịch 5 tờ", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-lich-7-to", "t": "In lịch 7 tờ treo tường", "h": "In lịch 7 tờ treo tường", "k": "in lịch 7 tờ", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-lich-bloc-2027-gia-re-bao-gia-mau-moi-nhat", "t": "Lịch bloc 2027: báo giá và mẫu mới nhất", "h": "Lịch bloc 2027: báo giá và mẫu mới nhất", "k": "lịch bloc 2027: báo giá và mẫu mới nhất", "g": "In lịch bloc", "gs": "in-lich-bloc"}, {"s": "in-lich-bloc-sieu-cuc-dai-2027", "t": "In lịch bloc siêu đại, cực đại 2027", "h": "In lịch bloc siêu đại, cực đại 2027", "k": "in lịch bloc siêu đại, cực đại 2027", "g": "In lịch bloc", "gs": "in-lich-bloc"}, {"s": "in-lich-bloc", "t": "In lịch bloc 2027", "h": "In lịch bloc 2027 theo yêu cầu", "k": "in lịch bloc 2027", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-lich-de-ban", "t": "In lịch để bàn", "h": "In lịch để bàn theo yêu cầu", "k": "in lịch để bàn quận 7", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-lich-go-3d", "t": "In lịch gỗ 3D", "h": "In lịch gỗ 3D theo yêu cầu", "k": "in lịch gỗ 3d", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-lich-laminate", "t": "In lịch laminate", "h": "In lịch laminate theo yêu cầu", "k": "in lịch laminate", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-lich-tet-gia-bao-nhieu-bang-gia-in-lich-tet-2026-moi-nhat", "t": "In lịch Tết giá bao nhiêu? Bảng giá in lịch Tết mới nhất", "h": "In lịch Tết giá bao nhiêu? Bảng giá in lịch Tết mới nhất", "k": "in lịch tết giá bao nhiêu? bảng giá in lịch tết mới nhất", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-lich-tet", "t": "In lịch Tết 2027", "h": "In lịch Tết 2027 theo yêu cầu tại Quận 7", "k": "in lịch tết 2027", "g": "In lịch Tết 2027", "gs": "in-lich-tet"}, {"s": "in-lich-treo-tuong", "t": "In lịch treo tường 2027", "h": "In lịch treo tường 2027 theo yêu cầu", "k": "in lịch treo tường 2027", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-menu-bia-cung", "t": "In menu bìa cứng", "h": "In menu bìa cứng cho nhà hàng tại Quận 7", "k": "in menu bìa cứng cho nhà hàng", "g": "In menu", "gs": "in-menu"}, {"s": "in-menu-giay-kraft", "t": "In menu giấy kraft", "h": "In menu giấy kraft theo yêu cầu tại Quận 7", "k": "in menu giấy kraft", "g": "In menu", "gs": "in-menu"}, {"s": "in-menu-nha-hang", "t": "In menu nhà hàng", "h": "In menu nhà hàng theo yêu cầu tại Quận 7", "k": "in menu nhà hàng", "g": "In menu", "gs": "in-menu"}, {"s": "in-menu-quan-ca-phe", "t": "In menu quán cà phê", "h": "In menu quán cà phê theo concept tại Quận 7", "k": "in menu quán cà phê theo concept", "g": "In menu", "gs": "in-menu"}, {"s": "in-menu", "t": "In menu", "h": "In menu theo yêu cầu tại Quận 7 cho nhà hàng, quán cà phê", "k": "in menu quận 7", "g": "In menu", "gs": "in-menu"}, {"s": "in-poster", "t": "In poster", "h": "In poster quảng cáo theo yêu cầu tại Quận 7", "k": "in poster quảng cáo", "g": "", "gs": ""}, {"s": "in-so-tay-bia-cung", "t": "In sổ tay bìa cứng", "h": "In sổ tay bìa cứng in logo theo yêu cầu tại Quận 7", "k": "in sổ tay bìa cứng", "g": "In sổ tay", "gs": "in-so-tay"}, {"s": "in-so-tay-bia-da", "t": "In sổ tay bìa da", "h": "In sổ tay bìa da ép logo theo yêu cầu tại Quận 7", "k": "in sổ tay bìa da ép logo", "g": "In sổ tay", "gs": "in-so-tay"}, {"s": "in-so-tay-lo-xo", "t": "In sổ tay lò xo", "h": "In sổ tay lò xo in logo theo yêu cầu tại Quận 7", "k": "in sổ tay lò xo", "g": "In sổ tay", "gs": "in-so-tay"}, {"s": "in-so-tay-mini", "t": "In sổ tay mini", "h": "In sổ tay mini in logo theo yêu cầu tại Quận 7", "k": "in sổ tay mini", "g": "In sổ tay", "gs": "in-so-tay"}, {"s": "in-so-tay", "t": "In sổ tay", "h": "In sổ tay in logo theo yêu cầu tại Quận 7", "k": "in sổ tay", "g": "In sổ tay", "gs": "in-so-tay"}, {"s": "in-standee", "t": "In standee", "h": "In standee quảng cáo theo yêu cầu tại Quận 7", "k": "in standee quảng cáo", "g": "", "gs": ""}, {"s": "in-tag-treo", "t": "In tag treo", "h": "In tag treo — thẻ bài quần áo, sản phẩm tại Quận 7", "k": "in tag treo", "g": "", "gs": ""}, {"s": "in-tem-chong-hang-gia", "t": "In tem chống hàng giả", "h": "In tem chống hàng giả theo yêu cầu tại Quận 7", "k": "in tem chống hàng giả", "g": "In tem nhãn", "gs": "in-tem-nhan"}, {"s": "in-tem-nhan-giay", "t": "In tem nhãn giấy", "h": "In tem nhãn giấy theo yêu cầu tại Quận 7", "k": "in tem nhãn giấy", "g": "In tem nhãn", "gs": "in-tem-nhan"}, {"s": "in-the-nhan-vien", "t": "In thẻ nhân viên", "h": "In thẻ nhân viên theo yêu cầu tại Quận 7", "k": "in thẻ nhân viên", "g": "", "gs": ""}, {"s": "in-thiep-tet", "t": "In thiệp Tết", "h": "In thiệp Tết theo yêu cầu", "k": "in thiệp tết", "g": "In thiệp Tết và giấy khen", "gs": "in-thiep-va-giay-khen"}, {"s": "in-thiep-va-giay-khen", "t": "In thiệp Tết và giấy khen", "h": "In thiệp Tết và giấy khen theo yêu cầu", "k": "in thiệp tết và giấy khen", "g": "In thiệp Tết và giấy khen", "gs": "in-thiep-va-giay-khen"}, {"s": "in-to-roi-khai-truong", "t": "In tờ rơi khai trương", "h": "In tờ rơi khai trương lấy gấp tại Quận 7", "k": "in tờ rơi khai trương lấy gấp", "g": "In tờ rơi", "gs": "in-to-roi"}, {"s": "in-to-roi-quang-cao", "t": "In tờ rơi quảng cáo", "h": "In tờ rơi quảng cáo, tờ gấp 3 theo yêu cầu tại TP.HCM", "k": "in tờ rơi quảng cáo, tờ gấp 3", "g": "In tờ rơi", "gs": "in-to-roi"}, {"s": "in-to-roi-sieu-thi", "t": "In tờ rơi siêu thị", "h": "In tờ rơi siêu thị, tờ khuyến mãi theo đợt", "k": "in tờ rơi siêu thị, tờ khuyến mãi theo đợt", "g": "In tờ rơi", "gs": "in-to-roi"}, {"s": "in-to-roi", "t": "In tờ rơi", "h": "In tờ rơi Quận 7 theo yêu cầu – thiết kế miễn phí, in nhanh", "k": "in tờ rơi quận 7", "g": "In tờ rơi", "gs": "in-to-roi"}, {"s": "in-tranh-lich-tet", "t": "In tranh lịch Tết", "h": "In tranh lịch Tết theo yêu cầu", "k": "in tranh lịch", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "in-tui-giay-dung-qua", "t": "In túi giấy đựng quà", "h": "In túi giấy đựng quà theo yêu cầu", "k": "in túi giấy đựng quà", "g": "In túi giấy", "gs": "in-tui-giay"}, {"s": "in-tui-giay-dung-thuc-pham", "t": "In túi giấy đựng thực phẩm", "h": "In túi giấy đựng thực phẩm", "k": "in túi giấy đựng thực phẩm", "g": "In túi giấy", "gs": "in-tui-giay"}, {"s": "in-tui-giay-kraft", "t": "In túi giấy kraft", "h": "In túi giấy kraft theo yêu cầu", "k": "in túi giấy kraft", "g": "In túi giấy", "gs": "in-tui-giay"}, {"s": "in-tui-giay-thoi-trang", "t": "In túi giấy thời trang cho shop", "h": "In túi giấy thời trang cho shop", "k": "in túi giấy thời trang cho shop", "g": "In túi giấy", "gs": "in-tui-giay"}, {"s": "in-tui-giay", "t": "In túi giấy", "h": "In túi giấy theo yêu cầu tại Quận 7", "k": "in túi giấy", "g": "In túi giấy", "gs": "in-tui-giay"}, {"s": "in-tui-nilon", "t": "In túi nilon", "h": "In túi nilon theo yêu cầu cho shop", "k": "in túi nilon", "g": "In túi giấy", "gs": "in-tui-giay"}, {"s": "khi-nao-nen-dat-in-lich-tet-de-duoc-gia-tot-nhat", "t": "Khi nào nên đặt in lịch Tết để được giá tốt nhất?", "h": "Khi nào nên đặt in lịch Tết để được giá tốt nhất?", "k": "khi nào nên đặt in lịch tết để được giá tốt nhất?", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "kich-thuoc-kho-giay-a0a1a2a3a4a5a6", "t": "kich-thuoc-kho-giay-a0a1a2a3a4a5a6", "h": "", "k": "kích thước khổ giấy a0, a1, a2, a3, a4, a5, a6 chuẩn", "g": "", "gs": ""}, {"s": "so-sanh-cac-loai-lich-tet-bloc-7-to-5-to-de-ban-go-3d-nen-chon-loai-nao", "t": "So sánh các loại lịch Tết: bloc, 7 tờ, 5 tờ, để bàn, gỗ 3D — nên chọn loại nào?", "h": "So sánh các loại lịch Tết: bloc, 7 tờ, 5 tờ, để bàn, gỗ 3D — nên chọn loại nào?", "k": "so sánh các loại lịch tết: bloc, 7 tờ, 5 tờ, để bàn, gỗ 3d", "g": "In lịch Tết", "gs": "in-lich-tet"}, {"s": "", "t": "Trang chủ In Tam Hiệp", "h": "In nhanh Quận 7 — in nhanh trong ngày tại xưởng Tam Hiệp", "k": "in nhanh quận 7", "g": "", "gs": ""}, {"s": "in-tem-nhan", "t": "In tem nhãn", "h": "In tem nhãn theo yêu cầu tại Quận 7", "k": "in tem nhãn", "g": "In tem nhãn", "gs": "in-tem-nhan"}, {"s": "in-decal-cuon", "t": "In decal cuộn", "h": "In decal cuộn giá xưởng tại Quận 7", "k": "in decal cuộn giá xưởng", "g": "In tem nhãn", "gs": "in-tem-nhan"}, {"s": "dich-vu", "t": "Dịch vụ in ấn", "h": "Dịch vụ in ấn tại Quận 7 — In Tam Hiệp", "k": "dịch vụ in ấn", "g": "Dịch vụ in ấn", "gs": "dich-vu"}, {"s": "lien-he", "t": "Liên hệ", "h": "Liên hệ In Tam Hiệp", "k": "liên hệ in tam hiệp – xưởng in quận 7 cũ, báo giá qua zalo", "g": "", "gs": ""}];</script>
+<style>
+#th-sx{position:fixed;inset:0;z-index:100000;display:flex;align-items:flex-start;justify-content:center}
+#th-sx[hidden]{display:none}
+.th-sx-bg{position:absolute;inset:0;background:rgba(10,32,42,.55)}
+.th-sx-panel{position:relative;background:#fff;width:min(640px,92vw);max-height:78vh;overflow:auto;margin-top:7vh;border-radius:14px;box-shadow:0 18px 50px rgba(10,32,42,.35)}
+.th-sx-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;border-bottom:1px solid #e4edef;font-weight:700;color:#23586A;font-size:16px}
+#th-sx-close{border:0;background:#eef4f6;color:#23586A;width:32px;height:32px;border-radius:50%;font-size:15px;cursor:pointer;flex:none}
+.th-sx-body{padding:8px 10px 14px}
+a.th-sx-item{display:block;padding:10px 10px;border-radius:10px;text-decoration:none}
+a.th-sx-item:hover{background:#f2f8f9}
+.th-sx-item b{display:block;color:#17323d;font-size:15.5px}
+.th-sx-item span{color:#6b828c;font-size:13px}
+.th-sx-rel{margin:10px 10px 4px;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:#8aa0a9;text-transform:uppercase}
+.th-sx-empty{padding:12px 10px;color:#43565f;font-size:14.5px;line-height:1.55}
+</style>
+<script>
+var TH_INDEX = (typeof window !== 'undefined' && window.TH_SEARCH_INDEX) || (typeof globalThis !== 'undefined' && globalThis.TH_SEARCH_INDEX) || [];
+var TH_PREVIEW = 'https://ntn162.github.io/tamhiep-web-xem/';
+function thNorm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();}
+function thSearch(qRaw){
+  var q = thNorm(qRaw); if(!q) return {main:[], rel:[]};
+  var qw = q.split(' '), scored = [], i, e, tk, kk, sk, sc;
+  for (i=0;i<TH_INDEX.length;i++){
+    e = TH_INDEX[i];
+    tk = thNorm(e.t + ' ' + (e.h||'')); kk = thNorm(e.k||''); sk = thNorm((e.s||'').replace(/-/g,' '));
+    sc = 0;
+    if (tk.indexOf(q) >= 0) sc += 100;
+    if (kk && kk.indexOf(q) >= 0) sc += 90;
+    var allT = qw.every(function(w){return tk.indexOf(w)>=0;});
+    var allK = qw.every(function(w){return kk.indexOf(w)>=0;});
+    if (allT) sc += 60;
+    if (allK) sc += 55;
+    if (!allT && !allK && qw.every(function(w){return (tk+' '+kk).indexOf(w)>=0;})) sc += 40;
+    qw.forEach(function(w){ if (tk.indexOf(w)>=0) sc+=8; if (kk.indexOf(w)>=0) sc+=6; if (sk.indexOf(w)>=0) sc+=5; });
+    if (sk.replace(/^in\s+/,'') === q) sc += 50;
+    if (sc > 0) scored.push({e:e, sc:sc});
+  }
+  scored.sort(function(a,b){ return b.sc - a.sc || a.e.t.length - b.e.t.length; });
+  var main = scored.slice(0, 10), rel = [];
+  if (main.length < 4){
+    var groups = {}, shown = {}, j, e2;
+    main.forEach(function(m){ shown[m.e.s]=1; if (m.e.gs) groups[m.e.gs]=1; });
+    for (j=0;j<TH_INDEX.length && rel.length<6;j++){
+      e2 = TH_INDEX[j];
+      if (e2.gs && groups[e2.gs] && !shown[e2.s]) rel.push({e:e2, sc:0});
+    }
+  }
+  return {main: main, rel: rel};
+}
+if (typeof document !== 'undefined'){
+  document.addEventListener('DOMContentLoaded', function(){
+    var forms = document.querySelectorAll('form.sp-form, form.tsearch');
+    if (!forms.length) return;
+    var ov = document.createElement('div');
+    ov.id = 'th-sx'; ov.hidden = true;
+    ov.innerHTML = '<div class="th-sx-bg"></div><div class="th-sx-panel" role="dialog" aria-label="Kết quả tìm kiếm">'
+      + '<div class="th-sx-head"><span id="th-sx-title"></span><button type="button" id="th-sx-close" aria-label="Đóng">✕</button></div>'
+      + '<div class="th-sx-body" id="th-sx-body"></div></div>';
+    document.body.appendChild(ov);
+    var titleEl = ov.querySelector('#th-sx-title'), bodyEl = ov.querySelector('#th-sx-body');
+    function closeOv(){ ov.hidden = true; }
+    ov.querySelector('#th-sx-close').addEventListener('click', closeOv);
+    ov.querySelector('.th-sx-bg').addEventListener('click', closeOv);
+    document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') closeOv(); });
+    function itemHtml(m){
+      var href = TH_PREVIEW + (m.e.s ? m.e.s + '/' : '');
+      return '<a class="th-sx-item" href="' + href + '"><b>' + m.e.t + '</b>' + (m.e.g ? '<span>' + m.e.g + '</span>' : '') + '</a>';
+    }
+    function runSearch(qRaw){
+      var r = thSearch(qRaw), h = '';
+      titleEl.textContent = 'Kết quả cho “' + qRaw + '”';
+      if (r.main.length){ h += r.main.map(itemHtml).join(''); }
+      else { h += '<p class="th-sx-empty">Không tìm thấy trang phù hợp. Thử từ khóa khác, ví dụ: tem nhãn, hộp giấy, lịch Tết, bìa hồ sơ…</p>'; }
+      if (r.rel.length){ h += '<div class="th-sx-rel">Bài liên quan</div>' + r.rel.map(itemHtml).join(''); }
+      bodyEl.innerHTML = h;
+      ov.hidden = false;
+    }
+    Array.prototype.forEach.call(forms, function(f){
+      f.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        var inp = f.querySelector('input[name="s"]');
+        var q = inp ? inp.value.trim() : '';
+        if (q) runSearch(q);
+      });
+    });
+  });
+}
+</script>
 </body>
 </html>
