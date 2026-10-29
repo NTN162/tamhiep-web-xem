@@ -1331,7 +1331,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 })();
 </script>
 
-<div class="th-calc-bg" id="thCalc" hidden data-mode="piece" data-block="0" data-min="50" data-multmsg="" data-tiers="100,200,300,500,1000,1500,2000,3000,5000" data-unithead="Đơn giá">
+<div class="th-calc-bg" id="thCalc" hidden data-mode="piece" data-block="0" data-min="50" data-multmsg="" data-sizemode="shape" data-tiers="100,200,300,500,1000,1500,2000,3000,5000" data-unithead="Đơn giá">
   <div class="th-calc-panel" role="dialog" aria-modal="true" aria-label="Tính giá in tem nhãn">
     <div class="th-calc-head"><b>Tính giá in tem nhãn</b><button type="button" class="th-calc-x" id="thCalcClose" aria-label="Đóng hộp tính giá">×</button></div>
     <div class="th-calc-body">
@@ -1345,16 +1345,20 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
           </select>
           <small class="th-unit" id="thCalcUnit"></small>
         </label>
-        <label class="th-f" data-th-spec data-label="Kích thước tem"><span>Kích thước tem</span>
-          <select class="th-spec-sel">
-            <option>3×3 cm</option>
-            <option>4×4 cm</option>
-            <option>5×5 cm</option>
-            <option>4×6 cm</option>
-            <option>5×7 cm</option>
-            <option>Khác — ghi vào ghi chú</option>
-          </select>
-        </label>
+        <div class="th-size" id="thSizeBlock" data-th-spec data-label="Kích thước" data-sizeblock="1">
+          <span class="th-size-t">Hình dạng tem</span>
+          <div class="th-shape-row" role="group" aria-label="Chọn hình dạng tem">
+            <button type="button" class="th-shape-btn on" id="thShapeRect">Chữ nhật / vuông</button>
+            <button type="button" class="th-shape-btn" id="thShapeRound">Tròn</button>
+          </div>
+          <div class="th-size-grid" id="thSizeRectFields">
+            <label class="th-f"><span>Dài (cm)</span><input type="number" id="thSizeL" inputmode="decimal" min="0" step="0.1" value="6"></label>
+            <label class="th-f"><span>Rộng (cm)</span><input type="number" id="thSizeW" inputmode="decimal" min="0" step="0.1" value="4"></label>
+          </div>
+          <label class="th-f" id="thSizeDWrap" hidden><span>Đường kính (cm)</span><input type="number" id="thSizeD" inputmode="decimal" min="0" step="0.1" value="5"></label>
+          <p class="th-calc-err" id="thSizeErr" hidden></p>
+          <div class="th-prev" id="thSizePrev" aria-hidden="true"></div>
+        </div>
         <fieldset class="th-f th-checks" data-th-spec data-label="Gia công (sale tính vào giá xác nhận)"><legend>Gia công (sale tính vào giá xác nhận)</legend>
           <label class="th-chk"><input type="checkbox" class="th-spec-chk" value="Bế theo hình logo"> Bế theo hình logo</label>
           <label class="th-chk"><input type="checkbox" class="th-spec-chk" value="Cán màng mờ"> Cán màng mờ</label>
@@ -1440,6 +1444,17 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 .th-tier-row:active td{background:#F2F8FA}
 .th-tier-row.on td{background:#E3F1FA;font-weight:700;color:#14506B}
 .th-tier-row.on td:first-child{box-shadow:inset 3px 0 0 #1B87C9}
+.th-size{margin:0 0 13px}
+.th-size .th-f{margin-bottom:0}
+.th-size-t{display:block;font-size:13px;font-weight:700;color:#47626F;margin-bottom:6px}
+.th-shape-row{display:flex;gap:8px;margin-bottom:10px}
+.th-shape-btn{flex:1;padding:10px 8px;border:1.5px solid #C9DDE7;border-radius:10px;background:#fff;color:#2A4A57;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer}
+.th-shape-btn.on{background:#E3F1FA;border-color:#1B87C9;color:#14506B}
+.th-size-grid{display:flex;gap:10px}
+.th-size-grid .th-f{flex:1}
+.th-size-grid[hidden],#thSizeDWrap[hidden]{display:none!important}
+.th-prev{margin-top:10px;background:#F7FBFD;border:1.5px dashed #CFE7F4;border-radius:12px;padding:6px 8px}
+.th-prev svg{display:block;width:100%;height:auto}
 body.th-calc-lock{overflow:hidden}
 @media(max-width:560px){.th-calc-total b{font-size:20px}.th-calc-head b{font-size:16.5px}}
 </style>
@@ -1457,6 +1472,78 @@ body.th-calc-lock{overflow:hidden}
       tiers = (root.getAttribute('data-tiers') || '').split(',').map(function(s){ return parseInt(s, 10); }).filter(function(n){ return !isNaN(n) && n > 0; });
   var unitHeadEl = document.getElementById('thTiersUnitH');
   if (unitHeadEl && root.getAttribute('data-unithead')) unitHeadEl.textContent = root.getAttribute('data-unithead');
+  // ---- Khoi kich thuoc theo hinh dang (size_mode = 'shape'): nhap cm, luu mm ----
+  var sizeMode = root.getAttribute('data-sizemode') || '';
+  var shapeState = { shape:'rect', l:6, w:4, d:5, mmL:60, mmW:40, mmD:50 };
+  var sizeBlock = document.getElementById('thSizeBlock'),
+      btnRect = document.getElementById('thShapeRect'), btnRound = document.getElementById('thShapeRound'),
+      inL = document.getElementById('thSizeL'), inW = document.getElementById('thSizeW'), inD = document.getElementById('thSizeD'),
+      rectFields = document.getElementById('thSizeRectFields'), dWrap = document.getElementById('thSizeDWrap'),
+      sizeErr = document.getElementById('thSizeErr'), prevEl = document.getElementById('thSizePrev');
+  function parseDim(el){ if (!el) return NaN; return parseFloat(String(el.value).replace(',', '.')); }
+  function dimOk(v){ return !isNaN(v) && v > 0 && v <= 100; }
+  function fmtDim(v){ return String(Math.round(v * 100) / 100); }
+  function readSize(){
+    if (shapeState.shape === 'round'){
+      var d = parseDim(inD);
+      shapeState.d = d; shapeState.mmD = Math.round(d * 10);
+      return dimOk(d) ? { ok:true } : { ok:false, msg:'Đường kính phải là số lớn hơn 0 và tối đa 100 cm, anh/chị kiểm tra lại giúp xưởng.' };
+    }
+    var l = parseDim(inL), w = parseDim(inW);
+    shapeState.l = l; shapeState.w = w; shapeState.mmL = Math.round(l * 10); shapeState.mmW = Math.round(w * 10);
+    return (dimOk(l) && dimOk(w)) ? { ok:true } : { ok:false, msg:'Mỗi chiều (dài, rộng) phải là số lớn hơn 0 và tối đa 100 cm, anh/chị kiểm tra lại giúp xưởng.' };
+  }
+  function sizeText(){
+    if (shapeState.shape === 'round') return 'Tròn — đường kính ' + fmtDim(shapeState.d) + ' cm';
+    return 'Chữ nhật — ' + fmtDim(shapeState.l) + ' × ' + fmtDim(shapeState.w) + ' cm';
+  }
+  function drawPreview(){
+    if (!prevEl) return;
+    var cx = 148, cy = 92, svg = '';
+    if (shapeState.shape === 'round'){
+      var r = 52, dtxt = dimOk(shapeState.d) ? ('⌀ ' + fmtDim(shapeState.d) + ' cm') : '⌀ —';
+      svg = '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r + 6) + '" fill="none" stroke="#E4572E" stroke-width="1.4" stroke-dasharray="5 4"/>' +
+            '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="#DDEEF9" stroke="#1B87C9" stroke-width="2"/>' +
+            '<line x1="' + (cx - r) + '" y1="' + cy + '" x2="' + (cx + r) + '" y2="' + cy + '" stroke="#7FA8BD" stroke-width="1" stroke-dasharray="3 3"/>' +
+            '<text x="' + cx + '" y="' + (cy + r + 28) + '" text-anchor="middle" font-size="14" font-weight="700" fill="#23586A">' + dtxt + '</text>';
+    } else {
+      var l = dimOk(shapeState.l) ? shapeState.l : 6, w = dimOk(shapeState.w) ? shapeState.w : 4;
+      var sc = Math.min(185 / l, 100 / w), pw = Math.max(16, l * sc), ph = Math.max(16, w * sc);
+      var x = cx - pw / 2, y = cy - ph / 2;
+      var ltxt = dimOk(shapeState.l) ? (fmtDim(shapeState.l) + ' cm') : '—';
+      var wtxt = dimOk(shapeState.w) ? (fmtDim(shapeState.w) + ' cm') : '—';
+      svg = '<rect x="' + (x - 6) + '" y="' + (y - 6) + '" width="' + (pw + 12) + '" height="' + (ph + 12) + '" fill="none" stroke="#E4572E" stroke-width="1.4" stroke-dasharray="5 4" rx="3"/>' +
+            '<rect x="' + x + '" y="' + y + '" width="' + pw + '" height="' + ph + '" fill="#DDEEF9" stroke="#1B87C9" stroke-width="2" rx="2"/>' +
+            '<text x="' + cx + '" y="' + (y - 13) + '" text-anchor="middle" font-size="14" font-weight="700" fill="#23586A">' + ltxt + '</text>' +
+            '<text x="' + (x + pw + 13) + '" y="' + (cy + 5) + '" font-size="14" font-weight="700" fill="#23586A">' + wtxt + '</text>';
+    }
+    prevEl.innerHTML = '<svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" role="img">' + svg + '</svg>';
+    if (sizeBlock){
+      sizeBlock.setAttribute('data-mm-l', shapeState.shape === 'round' ? shapeState.mmD : shapeState.mmL);
+      sizeBlock.setAttribute('data-mm-w', shapeState.shape === 'round' ? shapeState.mmD : shapeState.mmW);
+    }
+  }
+  function sizeValid(){
+    if (sizeMode !== 'shape' || !sizeBlock) return { ok:true };
+    var r = readSize();
+    drawPreview();
+    if (!r.ok){ sizeErr.textContent = r.msg; sizeErr.hidden = false; }
+    else sizeErr.hidden = true;
+    return r;
+  }
+  function setShape(sh){
+    shapeState.shape = sh;
+    if (btnRect) btnRect.classList.toggle('on', sh === 'rect');
+    if (btnRound) btnRound.classList.toggle('on', sh === 'round');
+    if (rectFields) rectFields.hidden = (sh !== 'rect');
+    if (dWrap) dWrap.hidden = (sh !== 'round');
+    compute();
+  }
+  if (sizeMode === 'shape' && sizeBlock){
+    if (btnRect) btnRect.addEventListener('click', function(){ setShape('rect'); });
+    if (btnRound) btnRound.addEventListener('click', function(){ setShape('round'); });
+    [inL, inW, inD].forEach(function(el){ if (el) el.addEventListener('input', compute); });
+  }
   function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ'; }
   function price(){ var o = variant.options[variant.selectedIndex]; return parseInt(o.getAttribute('data-price'),10) || 0; }
   function tierTotal(q){ return (mode === 'block') ? price() * (q / block) : price() * q; }
@@ -1496,9 +1583,12 @@ body.th-calc-lock{overflow:hidden}
     var o = variant.options[variant.selectedIndex];
     unitEl.textContent = 'Đơn giá: ' + o.getAttribute('data-plabel');
     syncTierMark();
+    var sv = sizeValid();
     var v = qtyValid();
     if (!v.ok){ totalEl.textContent = '—'; qtyErr.textContent = v.msg; qtyErr.hidden = false; submit.disabled = true; return null; }
-    qtyErr.hidden = true; submit.disabled = false;
+    qtyErr.hidden = true;
+    if (!sv.ok){ totalEl.textContent = '—'; submit.disabled = true; return null; }
+    submit.disabled = false;
     var total = (mode === 'block') ? price() * (v.q / block) : price() * v.q;
     totalEl.textContent = fmt(total);
     return { total: total, q: v.q };
@@ -1519,6 +1609,7 @@ body.th-calc-lock{overflow:hidden}
     var parts = [];
     root.querySelectorAll('[data-th-spec]').forEach(function(w){
       var label = w.getAttribute('data-label'), sel = w.querySelector('.th-spec-sel'), vals = [];
+      if (w.getAttribute('data-sizeblock')){ parts.push(label + ': ' + sizeText()); return; }
       if (sel) vals.push(sel.value);
       w.querySelectorAll('.th-spec-chk:checked').forEach(function(c){ vals.push(c.value); });
       if (vals.length) parts.push(label + ': ' + vals.join(', '));
@@ -1527,7 +1618,7 @@ body.th-calc-lock{overflow:hidden}
   }
   submit.addEventListener('click', function(){
     var c = compute();
-    if (!c){ qtyErr.scrollIntoView({ block:'center', behavior:'smooth' }); return; }
+    if (!c){ var eFirst = (sizeErr && !sizeErr.hidden) ? sizeErr : qtyErr; eFirst.scrollIntoView({ block:'center', behavior:'smooth' }); return; }
     var name = document.getElementById('thCalcName').value.trim(),
         phoneRaw = document.getElementById('thCalcPhone').value,
         phone = phoneRaw.replace(/\D/g, ''),
