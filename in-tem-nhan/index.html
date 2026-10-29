@@ -1331,7 +1331,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 })();
 </script>
 
-<div class="th-calc-bg" id="thCalc" hidden data-mode="piece" data-block="0" data-min="50" data-multmsg="">
+<div class="th-calc-bg" id="thCalc" hidden data-mode="piece" data-block="0" data-min="50" data-multmsg="" data-tiers="100,200,300,500,1000,1500,2000,3000,5000" data-unithead="Đơn giá">
   <div class="th-calc-panel" role="dialog" aria-modal="true" aria-label="Tính giá in tem nhãn">
     <div class="th-calc-head"><b>Tính giá in tem nhãn</b><button type="button" class="th-calc-x" id="thCalcClose" aria-label="Đóng hộp tính giá">×</button></div>
     <div class="th-calc-body">
@@ -1360,7 +1360,14 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
           <label class="th-chk"><input type="checkbox" class="th-spec-chk" value="Cán màng mờ"> Cán màng mờ</label>
           <label class="th-chk"><input type="checkbox" class="th-spec-chk" value="Cán màng bóng"> Cán màng bóng</label>
         </fieldset>
-        <label class="th-f"><span>Số lượng (tem)</span>
+        <div class="th-tiers">
+          <span class="th-tiers-t">Chọn nhanh theo số lượng</span>
+          <table class="th-tiers-tab">
+            <thead><tr><th>Số lượng</th><th id="thTiersUnitH">Đơn giá</th><th class="th-num">Thành tiền</th></tr></thead>
+            <tbody id="thCalcTiers"></tbody>
+          </table>
+        </div>
+        <label class="th-f"><span>Hoặc nhập số lượng khác</span>
           <input type="number" id="thCalcQty" inputmode="numeric" min="50" step="1" value="500">
         </label>
         <p class="th-calc-err" id="thCalcQtyErr" hidden></p>
@@ -1423,6 +1430,16 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 .th-calc-done-btns{display:flex;gap:10px}
 .th-calc-again{flex:0 0 auto;background:#E8F3F9;color:#23586A;border:0;border-radius:999px;padding:14px 18px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer}
 .th-calc-done-btns .th-calc-submit{flex:1}
+.th-tiers{margin:0 0 13px}
+.th-tiers-t{display:block;font-size:13px;font-weight:700;color:#47626F;margin-bottom:6px}
+.th-tiers-tab{width:100%;border-collapse:collapse;font-size:14.5px;color:#2A4A57}
+.th-tiers-tab th{font-size:12.5px;font-weight:700;text-align:left;color:#47626F;padding:6px 8px;border-bottom:2px solid #CFE7F4}
+.th-tiers-tab th.th-num,.th-tiers-tab td.th-num{text-align:right;white-space:nowrap}
+.th-tier-row{cursor:pointer}
+.th-tier-row td{padding:9px 8px;border-bottom:1px solid #E7F0F5}
+.th-tier-row:active td{background:#F2F8FA}
+.th-tier-row.on td{background:#E3F1FA;font-weight:700;color:#14506B}
+.th-tier-row.on td:first-child{box-shadow:inset 3px 0 0 #1B87C9}
 body.th-calc-lock{overflow:hidden}
 @media(max-width:560px){.th-calc-total b{font-size:20px}.th-calc-head b{font-size:16.5px}}
 </style>
@@ -1436,8 +1453,38 @@ body.th-calc-lock{overflow:hidden}
       qtyErr = document.getElementById('thCalcQtyErr'), errEl = document.getElementById('thCalcErr'),
       submit = document.getElementById('thCalcSubmit'),
       mainView = document.getElementById('thCalcMain'), doneView = document.getElementById('thCalcDone');
+  var tiersBody = document.getElementById('thCalcTiers'),
+      tiers = (root.getAttribute('data-tiers') || '').split(',').map(function(s){ return parseInt(s, 10); }).filter(function(n){ return !isNaN(n) && n > 0; });
+  var unitHeadEl = document.getElementById('thTiersUnitH');
+  if (unitHeadEl && root.getAttribute('data-unithead')) unitHeadEl.textContent = root.getAttribute('data-unithead');
   function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ'; }
   function price(){ var o = variant.options[variant.selectedIndex]; return parseInt(o.getAttribute('data-price'),10) || 0; }
+  function tierTotal(q){ return (mode === 'block') ? price() * (q / block) : price() * q; }
+  function syncTierMark(){
+    if (!tiersBody) return;
+    var q = parseInt(qtyEl.value, 10);
+    tiersBody.querySelectorAll('.th-tier-row').forEach(function(r){
+      r.classList.toggle('on', !isNaN(q) && parseInt(r.getAttribute('data-qty'), 10) === q);
+    });
+  }
+  function pickTier(t){ qtyEl.value = t; compute(); }
+  function renderTiers(){
+    if (!tiersBody) return;
+    tiersBody.innerHTML = '';
+    var p = price();
+    tiers.forEach(function(t){
+      var tr = document.createElement('tr');
+      tr.className = 'th-tier-row'; tr.setAttribute('data-qty', t); tr.setAttribute('tabindex', '0');
+      var c1 = document.createElement('td'); c1.textContent = t.toLocaleString('vi-VN');
+      var c2 = document.createElement('td'); c2.textContent = fmt(p);
+      var c3 = document.createElement('td'); c3.className = 'th-num'; c3.textContent = fmt(tierTotal(t));
+      tr.appendChild(c1); tr.appendChild(c2); tr.appendChild(c3);
+      tr.addEventListener('click', function(){ pickTier(t); });
+      tr.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pickTier(t); } });
+      tiersBody.appendChild(tr);
+    });
+    syncTierMark();
+  }
   function qtyValid(){
     var q = parseInt(qtyEl.value,10);
     if (isNaN(q)) return { ok:false, msg:'Anh/chị nhập số lượng giúp xưởng nhé.' };
@@ -1448,6 +1495,7 @@ body.th-calc-lock{overflow:hidden}
   function compute(){
     var o = variant.options[variant.selectedIndex];
     unitEl.textContent = 'Đơn giá: ' + o.getAttribute('data-plabel');
+    syncTierMark();
     var v = qtyValid();
     if (!v.ok){ totalEl.textContent = '—'; qtyErr.textContent = v.msg; qtyErr.hidden = false; submit.disabled = true; return null; }
     qtyErr.hidden = true; submit.disabled = false;
@@ -1465,7 +1513,7 @@ body.th-calc-lock{overflow:hidden}
   document.getElementById('thCalcDoneClose').addEventListener('click', closeCalc);
   root.addEventListener('click', function(e){ if (e.target === root) closeCalc(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !root.hidden) closeCalc(); });
-  variant.addEventListener('change', compute);
+  variant.addEventListener('change', function(){ renderTiers(); compute(); });
   qtyEl.addEventListener('input', compute);
   function specSummary(){
     var parts = [];
@@ -1505,6 +1553,7 @@ body.th-calc-lock{overflow:hidden}
   document.getElementById('thCalcAgain').addEventListener('click', function(){
     doneView.hidden = true; mainView.hidden = false; compute();
   });
+  renderTiers();
   compute();
 })();
 </script>
