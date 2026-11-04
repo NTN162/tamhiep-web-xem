@@ -133,6 +133,7 @@ nav.main a:hover{color:var(--blue-dark)}
 .slider .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:rgba(20,50,62,.35);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
 .slider .arrow:hover{background:rgba(20,50,62,.65)}
 .slider .arrow svg{width:20px;height:20px}
+.slider .arrow.prev svg{transform:scaleX(-1)}
 .slider .arrow.prev{left:22px}.slider .arrow.next{right:22px}
 /* Feature strip */
 .strip{background:#fff;border-bottom:1px solid var(--line)}
@@ -487,7 +488,7 @@ footer{background:var(--teal-deep);color:#c3dbe6}
       </div></div>
     </article>
   </div>
-  <button class="arrow prev" aria-label="Banner trước"><svg class="u-ic"><use href="#i-mui-ten" transform="rotate(180 12 12)"/></svg></button>
+  <button class="arrow prev" aria-label="Banner trước"><svg class="u-ic"><use href="#i-mui-ten"/></svg></button>
   <button class="arrow next" aria-label="Banner sau"><svg class="u-ic"><use href="#i-mui-ten"/></svg></button>
   <div class="dots" role="tablist" aria-label="Chọn banner"></div>
 </section>
