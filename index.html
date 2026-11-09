@@ -164,6 +164,7 @@ nav.main a:hover{color:var(--blue-dark)}
 .why p{font-size:14.5px;color:var(--muted)}
 /* Process */
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.steps.steps-4{grid-template-columns:repeat(4,1fr)}
 .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px}
 .step .num{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--blue-dark));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:12px}
 .step h3{font-size:16.5px;color:var(--teal);margin-bottom:5px}
@@ -261,7 +262,7 @@ footer{background:var(--teal-deep);color:#c3dbe6}
 /* Responsive */
 @media(max-width:1020px){
   .svc-grid{grid-template-columns:repeat(3,1fr)}
-  .why-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .why-grid,.steps,.steps.steps-4{grid-template-columns:repeat(2,1fr)}
   .grp{grid-template-columns:238px 1fr}
   .hd-search{display:none}
   .hd-search-btn{display:block}
@@ -298,7 +299,7 @@ footer{background:var(--teal-deep);color:#c3dbe6}
 }
 @media(max-width:560px){
   .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .why-grid,.steps{grid-template-columns:1fr}
+  .why-grid,.steps,.steps.steps-4{grid-template-columns:1fr}
   .topbar .wrap{flex-direction:column;gap:2px}
   .topbar .tb-r{gap:14px}
   .slide-btns .btn{flex:1;justify-content:center;font-size:14px;padding:12px 8px;white-space:nowrap}
@@ -607,7 +608,7 @@ footer{background:var(--teal-deep);color:#c3dbe6}
       <h2>Quy trình in nhanh 4 bước</h2>
       <p>Không cần đến xưởng: gửi yêu cầu qua Zalo, duyệt mẫu online, nhận hàng tận nơi.</p>
     </div>
-    <div class="steps">
+    <div class="steps steps-4">
       <div class="step"><div class="num">1</div><h3>Gửi yêu cầu</h3><p>Nhắn Zalo hoặc gọi hotline, cho xưởng biết sản phẩm, kích thước và số lượng cần in.</p></div>
       <div class="step"><div class="num">2</div><h3>Nhận báo giá</h3><p>Xưởng tư vấn chất liệu, gia công phù hợp và gửi báo giá rõ ràng theo đúng yêu cầu.</p></div>
       <div class="step"><div class="num">3</div><h3>Duyệt mẫu</h3><p>Gửi file thiết kế hoặc nhờ xưởng lên mẫu miễn phí, khách duyệt và chỉnh sửa đến khi ưng ý.</p></div>
